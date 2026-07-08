@@ -9,7 +9,6 @@ function Home() {
       <Hero />
       <AgendaHighlights />
       <PartnerSection />
-      <Footer />
     </main>
   );
 }

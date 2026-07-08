@@ -32,11 +32,10 @@ function NavBar() {
                 className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}
                 aria-label="Main navigation"
             >
-                <NavLink to="/" className="navbar__link" onClick={closeMenu}>Agenda</NavLink>
+                <NavLink to="/agenda" className="navbar__link" onClick={closeMenu}>Agenda</NavLink>
                 <NavLink to="/" className="navbar__link" onClick={closeMenu}>Speakers</NavLink>
                 <NavLink to="/" className="navbar__link" onClick={closeMenu}>Workshops</NavLink>
-                <NavLink to="/" className="navbar__link" onClick={closeMenu}>Sponsors</NavLink>
-                <NavLink to="/" className="navbar__link" onClick={closeMenu}>About</NavLink>
+                <NavLink to="/" className="navbar__link" onClick={closeMenu}>Partner With Us</NavLink>
 
                 <Link to="/" className="navbar__button" onClick={closeMenu}>Register</Link>
             </nav>

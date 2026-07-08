@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './AgendaHighlights.css';
 
 const agendaItems = [
@@ -52,9 +53,9 @@ function AgendaHighlights() {
           <h2>A full day of connection, insight, and career preparation.</h2>
         </div>
 
-        <a href="/" className="agenda-highlights__button">
+        <Link to="/agenda" className="agenda-highlights__button">
           View Full Agenda
-        </a>
+        </Link>
       </div>
 
       <div className="timeline">
