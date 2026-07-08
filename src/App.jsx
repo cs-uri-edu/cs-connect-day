@@ -1,10 +1,7 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Home from './pages/Home';
 import './App.css';
-
-function Home() {
-  return <main className="page-section">Home page coming soon.</main>;
-}
 
 function App() {
   return (
