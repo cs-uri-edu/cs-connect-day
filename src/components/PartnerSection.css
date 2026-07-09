@@ -86,7 +86,7 @@
     object-fit: contain;
 }
 
-/* Smaller desktop / laptop */
+/* Smaller desktop */
 @media (max-width: 1200px) {
     .partners {
         padding: 4.5rem 5%;

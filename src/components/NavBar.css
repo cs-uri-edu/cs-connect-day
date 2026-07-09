@@ -80,7 +80,7 @@
 
 
 
-/* Laptop / smaller desktop */
+/* Smaller desktop */
 @media (max-width: 1100px) {
     .navbar {
         padding: 0.75rem 4%;
@@ -99,7 +99,7 @@
     }
 }
 
-/* Tablet / mobile menu */
+/* Tablet */
 @media (max-width: 850px) {
     .navbar {
         position: relative;

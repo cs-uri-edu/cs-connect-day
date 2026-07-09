@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './PartnerSection.css';
 
 import fidelityLogo from '../assets/partner-logos/fidelity.png';
@@ -57,9 +58,9 @@ function PartnerSection() {
             <h2>Connect with employers, alumni, and technology leaders.</h2>
         </div>
 
-        <a href="/" className="partners__button">
+        <Link to="/partner-with-us" className="agenda-highlights__button">
           Partner With Us
-        </a>
+        </Link>
       </div>
 
       <div className="partners__grid">

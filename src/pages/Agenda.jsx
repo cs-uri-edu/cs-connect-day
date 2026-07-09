@@ -164,8 +164,8 @@ function Agenda() {
                                     <span>{session.location}</span>
                                 </div>
 
-                                <span className="agenda-session__arrow" aria-hidden="true">
-                                    ↓
+                                <span className="agenda-session__toggle" aria-hidden="true">
+                                    +
                                 </span>
                             </button>
 
@@ -219,7 +219,6 @@ function Agenda() {
             </section>
         </main>
     );
-    <Footer />
 }
 
 export default Agenda;
