@@ -1,8 +1,7 @@
 import './Footer.css';
 
 import handshakeLogo from '../assets/socials/handshake-white.png';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 function Footer() {
     return (
@@ -46,8 +45,8 @@ function Footer() {
                             <FaInstagram />
                         </a>
 
-                        <a href="https://x.com/URICCEE" aria-label="URI CCEE X" target="_blank" rel="noreferrer">
-                            <FaXTwitter />
+                        <a href="https://www.linkedin.com/company/uri-ccee/posts/?feedView=all" aria-label="URI CCEE Linkedin" target="_blank" rel="noreferrer">
+                            <FaLinkedin />
                         </a>
                     </div>
                 </div>
