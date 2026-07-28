@@ -76,13 +76,13 @@ const sessions = [
                 workshops: [
                     {
                         title: 'Workshop 1: To Be Announced',
-                        room: 'Room #',
+                        room: 'Bliss 260',
                         description:
                             'This workshop features a hands-on technical or career-focused learning opportunity.',
                     },
                     {
                         title: 'Workshop 2: To Be Announced',
-                        room: 'Room #',
+                        room: 'Bliss 290',
                         description:
                             'This workshop features a hands-on technical or career-focused learning opportunity.',
                     },
@@ -93,25 +93,25 @@ const sessions = [
                 workshops: [
                     {
                         title: 'Workshop 3: To Be Announced',
-                        room: 'Room #',
+                        room: 'Bliss 260',
                         description:
                             'This workshop features a hands-on technical or career-focused learning opportunity.',
                     },
                     {
                         title: 'Workshop 4: To Be Announced',
-                        room: 'Room #',
+                        room: 'Bliss 290',
                         description:
                             'This workshop features a hands-on technical or career-focused learning opportunity.',
                     },
                     {
                         title: 'Workshop 5: To Be Announced',
-                        room: 'Room #',
+                        room: 'Engineering 010C',
                         description:
                             'This workshop features a hands-on technical or career-focused learning opportunity.',
                     },
                     {
                         title: 'Workshop 6: To Be Announced',
-                        room: 'Room #',
+                        room: 'Engineering 025C',
                         description:
                             'This workshop features a hands-on technical or career-focused learning opportunity.',
                     },
