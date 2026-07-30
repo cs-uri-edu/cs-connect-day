@@ -91,32 +91,42 @@ function PartnerWithUs() {
         setOpenFaq(openFaq === index ? null : index);
     }
 
+    function showPreviousEngagement() {
+        setActiveEngagement((current) =>
+            current === 0 ? engagementOptions.length - 1 : current - 1
+        );
+    }
+
+    function showNextEngagement() {
+        setActiveEngagement((current) =>
+            current === engagementOptions.length - 1 ? 0 : current + 1
+        );
+    }
+
+
     return (
         <main id="main-content" className="partner-page">
-            <section className="partner-hero">
-                <p className="section-eyebrow">Connect With Our Students</p>
-                <h1>Support URI CS Students</h1>
-                <p>
-                    URI CS Connect Day brings together students, alumni, faculty, and
-                    industry partners for a full day of career conversations, networking,
-                    and hands-on learning.
-                </p>
-
-                <a href="https://forms.gle/yJ15cF1sXMvAr5JB8" className="partner-hero__button" target="_blank" rel="noreferrer">
-                    Partner Interest Form
-                </a>
+            <section className="partner-hero" aria-labelledby="partner-page-heading">
+                <div className="partner-hero__content">
+                    <p className="partner-hero__eyebrow">Connect With Our Students</p>
+                    <h1 id="partner-page-heading">Support URI CS Students</h1>
+                    <p className="partner-hero__description">
+                        URI CS Connect Day brings together students, alumni, faculty, and
+                        industry partners for a full day of career conversations, networking,
+                        and hands-on learning.
+                    </p>
+                </div>
             </section>
 
-            <section className="partner-section partner-impact">
+            <section className="partner-section partner-impact" aria-labelledby="partner-impact-heading">
                 <div className="partner-section__header partner-impact__header">
                     <p className="section-eyebrow">Why Partner</p>
-                    <h2>Make a direct impact on the next generation of computing professionals.</h2>
+                    <h2 id="partner-impact-heading">Make a direct impact on the next generation of computing professionals.</h2>
                 </div>
 
                 <div className="impact-grid">
                     {impactItems.map((item) => (
                         <article className="impact-card" key={item.title}>
-                            <span>{item.number}</span>
                             <h3>{item.title}</h3>
                             <p>{item.description}</p>
                         </article>
@@ -124,13 +134,28 @@ function PartnerWithUs() {
                 </div>
             </section>
 
-            <section className="partner-section partner-section--light">
+            <section className="partner-section partner-section--light" aria-labelledby="engagement-heading">
                 <div className="partner-section__header">
                     <p className="section-eyebrow">Ways to Engage</p>
-                    <h2>Choose the participation model that best fits your organization.</h2>
+                    <h2 id="engagement-heading">Choose the participation model that best fits your organization.</h2>
                 </div>
 
-                <div className="engagement-carousel">
+                <div 
+                    className="engagement-carousel"
+                    role="region"
+                    aria-roledescription="carousel"
+                    aria-label="Ways to engage with URI CS Connect Day"
+                    tabIndex="0"
+                    onKeyDown={(event) => {
+                        if (event.key === 'ArrowLeft') {
+                            showPreviousEngagement();
+                        }
+
+                        if (event.key === 'ArrowRight') {
+                            showNextEngagement();
+                        }
+                    }}
+                >
                     <button
                         type="button"
                         className="carousel-button"
@@ -146,7 +171,12 @@ function PartnerWithUs() {
                         &lt;
                     </button>
 
-                    <article className="engagement-slide">
+                    <article 
+                        className="engagement-slide"
+                        role="group"
+                        aria-roledescription="slide"
+                        aria-label={`${activeEngagement + 1} of ${engagementOptions.length}`}
+                    >
                         <p className="engagement-slide__label">
                             {engagementOptions[activeEngagement].label}
                         </p>
@@ -186,8 +216,8 @@ function PartnerWithUs() {
             </section>
 
             <section className="partner-cta">
-                <div>
-                    <p className="section-eyebrow">Get Involved</p>
+                <div className="partner-cta__content">
+                    <p className="involved-eyebrow">Get Involved</p>
                     <h2>Interested in participating?</h2>
                     <p>
                         Complete the partner interest form to share how your organization
@@ -216,6 +246,7 @@ function PartnerWithUs() {
                                 key={faq.question}
                             >
                                 <button
+                                    type="button"
                                     id={`faq-button-${index}`}
                                     className="faq-item__question"
                                     onClick={() => toggleFaq(index)}
@@ -231,6 +262,7 @@ function PartnerWithUs() {
                                     className="faq-item__answer"
                                     role="region"
                                     aria-labelledby={`faq-button-${index}`}
+                                    aria-hidden={!isOpen}
                                 >
                                     <p>{faq.answer}</p>
                                 </div>

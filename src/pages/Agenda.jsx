@@ -5,7 +5,7 @@ const sessions = [
     {
         id: 'morning',
         label: 'Morning Session',
-        title: 'Employer & Alumni Panels',
+        title: 'Keynote & Panels',
         time: '8:30 AM – 12:30 PM',
         location: 'Memorial Union Ballroom',
         details: [
@@ -26,7 +26,7 @@ const sessions = [
             },
             {
                 time: '9:10 AM',
-                title: 'Keynote Address',
+                title: 'Keynote Presentation',
                 description:
                     'An invited speaker shares insight on computing careers, AI, and emerging opportunities. Students can participate in Q&A with speaker. ',
                 note: 'Speaker to be announced.',
@@ -60,7 +60,7 @@ const sessions = [
                 description:
                     'Students, employers, alumni, faculty, and staff connect over lunch and employer booths.',
                 note:
-                    '',
+                    'Participating companies to be announced.',
             },
         ],
     },
@@ -130,13 +130,15 @@ function Agenda() {
 
     return (
         <main id="main-content" className="agenda-page">
-            <section className="agenda-hero">
-                <p className="section-eyebrow">September 18, 2026</p>
-                <h1>URI CS Connect Day Program</h1>
-                <p>
-                    A full day of employer panels, alumni conversations, networking, and hands-on
-                    workshops designed to help students prepare for computing careers.
-                </p>
+            <section className="agenda-hero" aria-labelledby="agenda-page-heading">
+                <div className="agenda-hero__content">
+                    <p className="agenda-hero__date">September 18, 2026</p>
+                    <h1 id="agenda-page-heading">CS Connect Day Program</h1>
+                    <p className="agenda-hero__description">
+                        A full day of employer panels, alumni conversations, networking, and hands-on
+                        workshops designed to help students prepare for computing careers.
+                    </p>
+                </div>
             </section>
 
             <section className="agenda-accordion" aria-label="Schedule of Events">
@@ -149,6 +151,8 @@ function Agenda() {
                             key={session.id}
                         >
                             <button
+                                type="button"
+                                id={`${session.id}-summary`}
                                 className="agenda-session__summary"
                                 onClick={() => toggleSession(session.id)}
                                 aria-expanded={isOpen}
@@ -172,6 +176,9 @@ function Agenda() {
                             <div
                                 id={`${session.id}-details`}
                                 className="agenda-session__details"
+                                role="region"
+                                aria-labelledby={`${session.id}-summary`}
+                                aria-hidden={!isOpen}
                             >
                                 {session.details && (
                                     <div className="agenda-detail-list">
