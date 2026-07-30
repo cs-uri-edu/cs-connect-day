@@ -24,7 +24,7 @@ function getTimeLeft(eventDate) {
 }
 
 function Hero() {
-  const eventDate = new Date('September 18, 2026 08:30:00').getTime();
+  const eventDate = new Date('2026-09-18T08:30:00-04:00').getTime();
 
   const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(eventDate));
 
@@ -57,23 +57,27 @@ function Hero() {
 
         <div className="countdown" aria-label="Countdown to URI CS Connect Day">
           <div className="countdown__item">
-            <span>{timeLeft.days}</span>
-            <p>Days</p>
+            <span aria-hidden="true">{timeLeft.days}</span>
+            <p aria-hidden="true">Days</p>
+            <span className="sr-only">{timeLeft.days} days</span>
           </div>
 
           <div className="countdown__item">
-            <span>{timeLeft.hours}</span>
-            <p>Hours</p>
+            <span aria-hidden="true">{timeLeft.hours}</span>
+            <p aria-hidden="true">Hours</p>
+            <span className="sr-only">{timeLeft.hours} hours</span>
           </div>
 
           <div className="countdown__item">
-            <span>{timeLeft.minutes}</span>
-            <p>Minutes</p>
+            <span aria-hidden="true">{timeLeft.minutes}</span>
+            <p aria-hidden="true">Minutes</p>
+            <span className="sr-only">{timeLeft.minutes} minutes</span>
           </div>
 
           <div className="countdown__item">
-            <span>{timeLeft.seconds}</span>
-            <p>Seconds</p>
+            <span aria-hidden="true">{timeLeft.seconds}</span>
+            <p aria-hidden="true">Seconds</p>
+            <span className="sr-only">{timeLeft.seconds} seconds</span>
           </div>
         </div>
       </div>

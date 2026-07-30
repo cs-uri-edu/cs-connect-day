@@ -53,7 +53,7 @@
 }
 
 .partner-section--light {
-    background: var(--gray-100);
+    background: var(--uri-white);
 }
 
 .partner-section__header {
@@ -71,7 +71,7 @@
 .partner-impact {
     background:
         radial-gradient(circle at top left, rgba(107, 169, 232, 0.22), transparent 32%),
-        var(--uri-white);
+        var(--gray-100);
 }
 
 .impact-grid {

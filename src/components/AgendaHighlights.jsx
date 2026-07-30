@@ -12,7 +12,7 @@ const agendaItems = [
   },
   {
     time: '9:10 AM – 10:00 AM',
-    title: 'Keynote Address',
+    title: 'Keynote Presentation',
     location: 'Memorial Union Ballroom',
     description:
       'An invited speaker shares industry insight on computing careers, AI, and emerging opportunities.',
@@ -46,11 +46,11 @@ const agendaItems = [
 
 function AgendaHighlights() {
   return (
-    <section className="agenda-highlights">
+    <section className="agenda-highlights" aria-labelledby="agenda-highlights-heading">
       <div className="agenda-highlights__header">
         <div>
           <p className="section-eyebrow">Agenda Highlights</p>
-          <h2>A full day of connection, insight, and career preparation.</h2>
+          <h2 id="agenda-highlights-heading">A full day of connection, insight, and career preparation.</h2>
         </div>
 
         <Link to="/agenda" className="agenda-highlights__button">
@@ -60,8 +60,8 @@ function AgendaHighlights() {
 
       <div className="timeline">
         {agendaItems.map((item, index) => (
-          <article className="timeline__item" key={index}>
-            <div className="timeline__marker">
+          <article className="timeline__item" key={item.title}>
+            <div className="timeline__marker" aria-hidden="true">
               <span></span>
             </div>
 

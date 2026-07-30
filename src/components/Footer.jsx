@@ -45,7 +45,7 @@ function Footer() {
                             <FaInstagram aria-hidden="true" />
                         </a>
 
-                        <a href="https://www.linkedin.com/company/uri-ccee/posts/?feedView=all" aria-label="URI CCEE Linkedin" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/company/uri-ccee/posts/?feedView=all" aria-label="URI CCEE LinkedIn" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin aria-hidden="true" />
                         </a>
                     </div>
