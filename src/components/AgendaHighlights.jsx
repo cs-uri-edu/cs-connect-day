@@ -8,7 +8,7 @@ const agendaItems = [
     location: 'Memorial Union Ballroom',
     description:
       'Opening remarks from URI leadership welcoming students, alumni, faculty, and industry partners.',
-    featured: 'Department Chair • Dean',
+    featured: 'Speaker to be announced.',
   },
   {
     time: '9:10 AM – 10:00 AM',
@@ -16,15 +16,23 @@ const agendaItems = [
     location: 'Memorial Union Ballroom',
     description:
       'An invited speaker shares industry insight on computing careers, AI, and emerging opportunities.',
-    featured: 'Invited Keynote Speaker',
+    featured: 'Speaker to be announced.',
   },
   {
-    time: '10:00 AM – 12:30 PM',
-    title: 'Panels',
+    time: '10:00 AM – 11:00 AM',
+    title: 'Employer Panel',
     location: 'Memorial Union Ballroom',
     description:
-      'Employers and alumni discuss recruiting, interviews, AI in hiring, and career pathways.',
-    featured: 'Schneider Electric • Alumni',
+      'Technology employers discuss recruiting, technical interviews, AI in hiring, and what they look for in today’s candidates.',
+    featured: 'Participating companies to be announced.',
+  },
+  {
+    time: '11:15 AM – 12:15 PM',
+    title: 'Alumni Roundtable',
+    location: 'Memorial Union Ballroom',
+    description:
+      'URI CS alumni discuss transitioning from college to industry, building successful careers, and lessons learned along the way.',
+    featured: 'Participating alumni and companies to be announced.',
   },
   {
     time: '12:30 PM – 1:50 PM',
@@ -32,7 +40,7 @@ const agendaItems = [
     location: 'Atrium 1',
     description:
       'Students connect with employers, alumni, faculty, and graduate program representatives.',
-    featured: 'Fidelity • Featured Employers',
+    featured: 'Participating employers to be announced.',
   },
   {
     time: '2:00 PM – 5:00 PM',
