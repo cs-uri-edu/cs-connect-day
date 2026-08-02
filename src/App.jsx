@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import Agenda from './pages/Agenda';
 import PartnerWithUs from './pages/PartnerWithUs';
+import Workshops from './pages/Workshops';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/partner-with-us" element={<PartnerWithUs />} />
+        <Route path="/workshops" element={<Workshops />} />
       </Routes>
 
       <Footer />
