@@ -479,8 +479,8 @@
         background: linear-gradient(
             180deg,
             var(--uri-navy) 0%,
-            var(--uri-light-blue) 72%,
-            var(--uri-white) 100%
+            #174f86 62%,
+            var(--uri-light-blue) 100%
         );
     }
 
