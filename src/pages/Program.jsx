@@ -117,7 +117,7 @@ const alumniPanelists = [
         organizationUrl: 'https://www.atlassian.com/company/careers/earlycareers',
         role: 'Alumnus',
         image: aguirre,
-        bio: "Hello! My name is Jason Aguirre. Since graduating from URI in 2023, I’ve helped Atlassian maintain its standing as one of the leaders in collaboration apps as a software engineer. I'm excited to be back on campus to share my transition from Kingston to the tech industry and help current Rams navigate their own career paths!",
+        bio: "Jason Aguirre is a software engineer at Atlassian and a 2023 graduate of the University of Rhode Island. Since graduating, he has contributed to Atlassian’s collaboration software and built his career in the technology industry. He is excited to return to URI to share his transition from college to industry and help current students navigate their own career paths.",
     },
     {
         name: 'Meghan Andrews',
