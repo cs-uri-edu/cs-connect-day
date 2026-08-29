@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Program.css';
@@ -63,6 +63,7 @@ const industryPanelists = [
         name: 'Eli Young',
         title: 'Co-founder & CEO',
         organization: 'AlgoArena',
+        organizationUrl: 'https://algoarena.net/',
         role: 'Panelist',
         image: young,
         bio: 'Eli Young is the co-founder and CEO of AlgoArena, an AI-native technical hiring platform that helps employers evaluate how candidates plan, prompt, debug, and build software with AI. A recent computer science graduate of Swarthmore College, he is also interested in AI-assisted programming, technical recruiting, and computer science education. His research on live, gamified classroom activities will be presented at the 2026 CCSC Southeastern Conference.',
@@ -71,6 +72,7 @@ const industryPanelists = [
         name: 'Sam Chappell',
         title: 'Founder & CEO',
         organization: 'Axial Search',
+        organizationUrl: 'https://axialsearch.com/',
         role: 'Panelist',
         image: chappell,
         bio: 'Sam Chappell is the founder and CEO of  Axial Search, an executive search and recruitment firm specializing in AI, machine learning and data. He recruits everyone from AI/ML engineers to the executives who own the strategy. His clients range from early-stage startups to established enterprise-scale businesses, so he sees how these teams are built at every stage of growth.',
@@ -78,6 +80,7 @@ const industryPanelists = [
     {
         name: 'Cam Flowers',
         organization: 'CodePath',
+        organizationUrl: 'https://www.codepath.org/',
         role: 'Panelist',
         bio: '',
     },
@@ -85,6 +88,7 @@ const industryPanelists = [
         name: 'Liz Durand',
         title: 'Global Talent Acquisition Analytics Lead',
         organization: 'Schneider Electric',
+        organizationUrl: 'https://careers.se.com/us-early-careers',
         role: 'Panelist',
         image: durand,
         bio: 'Liz Durand is the Global Talent Acquisition Analytics Lead at Schneider Electric, where Liz leads global talent analytics and workforce insights initiatives that help drive data-informed hiring and talent strategies. With experience spanning talent acquisition, analytics, process transformation, and technology, Liz is passionate about using data and AI to improve how organizations attract, engage, and develop talent. Liz enjoys connecting students and early-career professionals with opportunities to explore careers in technology and the future of work.',
@@ -97,6 +101,7 @@ const industryModerator = {
     name: 'Joe Mazzone',
     title: 'Co-Founder & CEO',
     organization: 'CuraCourse',
+    organizationUrl: 'https://www.curacourse.com/',
     role: 'Moderator',
     image: mazzone,
     bio: 'Joe Mazzone is the co-founder and CEO of CuraCourse, a platform for authoring and delivering interactive, personalized, and adaptive course materials, and the founder and executive director of the Computing Education Alliance, a Rhode Island nonprofit working to expand access to computing education. He has previously worked as a Director of Product Development and as an Engineering Manager at companies in the technology industry. He spent a decade as a CTE computer science teacher and department coordinator, for which he received multiple honors for teaching excellence, including District Teacher of the Year. Furthermore, he currently serves on the CS4RI team at the Rhode Island Department of Education and as an adjunct at URI teaching CSC 305 Software Engineering.',
@@ -109,6 +114,7 @@ const alumniPanelists = [
         name: 'Jason Aguirre',
         title: 'Software Engineer',
         organization: 'Atlassian',
+        organizationUrl: 'https://www.atlassian.com/company/careers/earlycareers',
         role: 'Alumnus',
         image: aguirre,
         bio: "Hello! My name is Jason Aguirre. Since graduating from URI in 2023, I’ve helped Atlassian maintain its standing as one of the leaders in collaboration apps as a software engineer. I'm excited to be back on campus to share my transition from Kingston to the tech industry and help current Rams navigate their own career paths!",
@@ -116,12 +122,14 @@ const alumniPanelists = [
     {
         name: 'Meghan Andrews',
         organization: 'Brightstar Lottery',
+        organizationUrl: 'https://brightstarlottery.com/who-we-are/careers',
         role: 'Alumna',
         bio: '',
     },
     {
         name: 'Evelidis Bueno',
         organization: 'Google',
+        organizationUrl: 'https://www.google.com/about/careers/applications/',
         role: 'Alumna',
         bio: '',
     },
@@ -135,6 +143,7 @@ const workshopPresenters = {
             name: 'Andy Luu',
             title: 'Co-founder & CTO',
             organization: 'AlgoArena',
+            organizationUrl: 'https://algoarena.net/',
             image: luu,
             bio: 'Andy Luu is the co-founder and CTO of AlgoArena, where he leads engineering and the AI tooling behind assessments. He is a Gates Scholar studying Computer Science and Psychology at Swarthmore College, with research in AI-assisted programming and machine learning.',
         },
@@ -142,6 +151,7 @@ const workshopPresenters = {
             name: 'Eli Young',
             title: 'Co-founder & CEO',
             organization: 'AlgoArena',
+            organizationUrl: 'https://algoarena.net/',
             image: young,
             bio: 'Eli Young is the co-founder and CEO of AlgoArena, where he sets product direction and ships code daily. He studied Computer Science at Swarthmore College, competed in ICPC, and founded Lock In, a focus app for iOS and Android.',
         },
@@ -151,13 +161,15 @@ const workshopPresenters = {
             name: 'Michael Conti',
             title: 'Cybersecurity Associate Teaching Professor',
             organization: 'University of Rhode Island',
+            organizationUrl: 'https://web.uri.edu/cs/',
             image: conti,
             bio: "Michael Conti is a Cybersecurity Associate Teaching Professor at the University of Rhode Island and a member of URI's Digital Forensics and Cyber Security Center (DFCSC). He teaches the early courses in URI's cybersecurity sequence along with introductory computer science. His research focuses on early interventions that support the retention and success of students in computing, and on AI-integrated computer science education, with the goal of designing evidence-based learning environments.",
         },
         {
             name: 'Liam McKenzie',
-            title: 'Undergraduate Student, Researcher & Teaching Assistant',
+            title: 'Undergrad Researcher & Teaching Assistant',
             organization: 'University of Rhode Island',
+            organizationUrl: 'https://web.uri.edu/cs/',
             bio: 'Liam McKenzie is an undergraduate student, researcher, and teaching assistant in the Department of Computer Science and Statistics at the University of Rhode Island. His primary research focuses on applied AI/ML, particularly with cryospheric and oceanic sciences. Beyond research, he is also the student manager at the IACR AI Lab and has completed a fellowship studying the real-world limitations of AI systems.',
         },
     ],
@@ -208,7 +220,19 @@ function SpeakerCard({ person }) {
                         )}
 
                         {person.organization && (
-                            <span>{person.organization}</span>
+                            <span>
+                                {person.organizationUrl ? (
+                                    <a
+                                        href={person.organizationUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {person.organization}
+                                    </a>
+                                ) : (
+                                    person.organization
+                                )}
+                            </span>
                         )}
                     </p>
                 )}
@@ -326,6 +350,24 @@ function Agenda() {
     }
 
 
+    const programNavRef = useRef(null);
+
+    function scrollProgramNav(direction) {
+        if (!programNavRef.current) {
+            return;
+        }
+
+        const prefersReducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        programNavRef.current.scrollBy({
+            left: direction * 220,
+            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        });
+    }
+
+
     return (
         <main id="main-content" className="agenda-page">
 
@@ -345,7 +387,18 @@ function Agenda() {
 
             {/* In-page navigation that scrolls without interfering with HashRouter */}
             <nav className="program-nav" aria-label="Program page sections">
-                <div className="program-nav__inner">
+
+                <div className="program-nav__controls">
+                    <button
+                        type="button"
+                        className="program-nav__arrow program-nav__arrow--left"
+                        onClick={() => scrollProgramNav(-1)}
+                        aria-label="Show previous program sections"
+                    >
+                        ‹
+                    </button>
+
+                <div className="program-nav__inner" ref={programNavRef}>
                     <button
                         type="button"
                         onClick={() => scrollToSection('registration')}
@@ -395,7 +448,17 @@ function Agenda() {
                         Workshops
                     </button>
                 </div>
-            </nav>
+
+                <button
+                    type="button"
+                    className="program-nav__arrow program-nav__arrow--right"
+                    onClick={() => scrollProgramNav(1)}
+                    aria-label="Show more program sections"
+                >
+                    ›
+                </button>
+            </div>
+        </nav>
 
 
             {/* Registration and event check-in */}
@@ -580,6 +643,15 @@ function Agenda() {
                     </p>
                 </div>
 
+                <div className="program-workshops__cta">
+                    <Link
+                        to="/workshops"
+                        className="program-button"
+                    >
+                        Browse Workshops &amp; Reserve a Seat
+                    </Link>
+                </div>
+
                 {workshopsLoading && (
                     <p className="program-workshops__status" role="status">
                         Loading workshop information...
@@ -656,7 +728,19 @@ function Agenda() {
                                                                             )}
 
                                                                             {presenter.organization && (
-                                                                                <span>{presenter.organization}</span>
+                                                                                <span>
+                                                                                    {presenter.organizationUrl ? (
+                                                                                        <a
+                                                                                            href={presenter.organizationUrl}
+                                                                                            target="_blank"
+                                                                                            rel="noopener noreferrer"
+                                                                                        >
+                                                                                            {presenter.organization}
+                                                                                        </a>
+                                                                                    ) : (
+                                                                                        presenter.organization
+                                                                                    )}
+                                                                                </span>
                                                                             )}
                                                                         </p>
 
@@ -737,7 +821,19 @@ function Agenda() {
                                                                             )}
 
                                                                             {presenter.organization && (
-                                                                                <span>{presenter.organization}</span>
+                                                                                <span>
+                                                                                    {presenter.organizationUrl ? (
+                                                                                        <a
+                                                                                            href={presenter.organizationUrl}
+                                                                                            target="_blank"
+                                                                                            rel="noopener noreferrer"
+                                                                                        >
+                                                                                            {presenter.organization}
+                                                                                        </a>
+                                                                                    ) : (
+                                                                                        presenter.organization
+                                                                                    )}
+                                                                                </span>
                                                                             )}
                                                                         </p>
 
@@ -765,15 +861,6 @@ function Agenda() {
                         )}
                     </div>
                 )}
-
-                <div className="program-workshops__cta">
-                    <Link
-                        to="/workshops"
-                        className="program-button"
-                    >
-                        Browse Workshops &amp; Reserve a Seat
-                    </Link>
-                </div>
             </section>
 
         </main>

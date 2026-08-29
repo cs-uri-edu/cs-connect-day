@@ -80,16 +80,48 @@
 }
 
 .program-nav__inner {
-    max-width: 1150px;
-    margin: 0 auto;
-    padding: 1rem 6%;
+    flex: 1;
+    min-width: 0;
+
+    padding: 1rem 0;
 
     display: flex;
     align-items: center;
     gap: 0.5rem;
 
     overflow-x: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+}
+
+.program-nav__inner::-webkit-scrollbar {
+    display: none;
+}
+
+.program-nav__arrow {
+    display: none;
+
+    flex-shrink: 0;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--uri-white);
+    color: var(--uri-navy);
+
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.program-nav__arrow:hover,
+.program-nav__arrow:focus-visible {
+    background: var(--uri-navy);
+    color: var(--uri-white);
 }
 
 .program-nav button {
@@ -128,6 +160,14 @@
 
 .program-nav button:focus-visible {
     box-shadow: 0 0 0 3px var(--uri-light-blue);
+}
+
+.program-nav__controls {
+    max-width: 1150px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
 }
 
 
@@ -311,6 +351,18 @@
     display: block;
 }
 
+.speaker-card__position a {
+    color: var(--uri-accessible-blue);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+.speaker-card__position a:hover,
+.speaker-card__position a:focus-visible {
+    color: var(--uri-navy);
+}
+
 .speaker-card__bio {
     margin: 0;
 
@@ -413,7 +465,8 @@
 }
 
 .program-workshops__cta {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 
@@ -490,6 +543,18 @@
     display: block;
 }
 
+.program-workshop-presenter__position a {
+    color: var(--uri-accessible-blue);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+.program-workshop-presenter__position a:hover,
+.program-workshop-presenter__position a:focus-visible {
+    color: var(--uri-navy);
+}
+
 .program-workshop-presenter__bio {
     margin: 0;
 
@@ -529,10 +594,7 @@
 .program-button:hover,
 .program-button:focus-visible {
     border-color: var(--uri-light-blue);
-
     background: var(--uri-light-blue);
-    color: var(--uri-navy);
-
     transform: translateY(-2px);
 }
 
@@ -602,9 +664,24 @@
         font-size: 1.08rem;
     }
 
+    .program-nav__controls {
+        padding: 0.6rem 3%;
+    }
+
     .program-nav__inner {
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
+        padding: 0;
+    }
+
+    .program-nav__arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .program-nav button:not(.program-nav__arrow) {
+        flex-shrink: 0;
+        padding: 0.55rem 0.8rem;
+        font-size: 0.9rem;
     }
 
     .program-nav button {
