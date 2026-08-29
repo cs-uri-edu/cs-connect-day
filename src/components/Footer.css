@@ -1,3 +1,4 @@
+/* Main footer container and URI color styling */
 .footer {
     padding: 3rem 6% 2rem;
     background: var(--uri-navy);
@@ -5,6 +6,12 @@
     border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+
+/*
+    Arrange Event, Organizers, and Connect into three columns:
+    - Event and Organizers share available space evenly
+    - Connect uses only the width its content requires
+*/
 .footer__content {
     display: grid;
     grid-template-columns: 1fr 1fr auto;
@@ -12,12 +19,15 @@
     align-items: flex-start;
 }
 
+
+/* Stack the content within each footer column vertically */
 .footer__column {
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
 }
 
+/* Style footer section headings */
 .footer__column h2 {
     margin-bottom: 0.35rem;
     color: var(--uri-light-blue);
@@ -26,6 +36,7 @@
     text-transform: uppercase;
 }
 
+/* Apply consistent styling to footer links and text */
 .footer__column a,
 .footer__column p {
     width: fit-content;
@@ -36,11 +47,14 @@
     line-height: 1.5;
 }
 
+/* Footer links hover and keyboard-focus state */
 .footer__column a:hover,
 .footer__column a:focus-visible {
     color: var(--uri-light-blue);
 }
 
+
+/* Arrange social media links horizontally and allow wrapping if needed */
 .footer__socials {
     display: flex;
     align-items: center;
@@ -67,17 +81,20 @@
         transform 0.25s ease;
 }
 
+/* Style Handshake image */
 .footer__socials img {
     max-width: 28px;
     max-height: 28px;
 }
 
+/* Facebook, Instagram, and LinkedIn React icons */
 .footer__socials svg {
     width: 24px;
     height: 24px;
     color: var(--uri-white);
 }
 
+/* Highlight and slightly raise social buttons on hover or keyboard focus */
 .footer__socials a:hover,
 .footer__socials a:focus-visible {
     background: var(--uri-light-blue);
@@ -88,17 +105,7 @@
     outline-offset: 4px;
 }
 
-.footer__bottom {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
 
-.footer__bottom p {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 0.9rem;
-}
 
 /* Smaller desktop */
 @media (max-width: 1200px) {
@@ -107,7 +114,11 @@
     }
 }
 
-/* Tablet */
+
+/*
+    Tablet:
+    Stack the three footer columns vertically
+*/
 @media (max-width: 900px) {
     .footer {
         padding: 3rem 6% 2rem;

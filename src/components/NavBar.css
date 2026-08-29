@@ -1,3 +1,9 @@
+/*
+    Main navigation bar:
+    - Stick to the top of the viewport while scrolling
+    - Display logo and navigation links horizontally
+    - Apply URI gradient background and bottom border
+*/
 .navbar {
     position: sticky;
     top: 0;
@@ -8,33 +14,34 @@
     justify-content: space-between;
 
     padding: 0.75rem 6%;
-    background: linear-gradient(
-        90deg,
-        var(--uri-navy) 0%,
-        var(--uri-light-blue) 45%,
-        var(--uri-white) 100%
-    );
+    background: linear-gradient(90deg, var(--uri-navy) 0%, var(--uri-light-blue) 45%, var(--uri-white) 100%);
     border-bottom: 1px solid var(--uri-navy);
 }
 
+
+/* Style the logo link */
 .navbar__brand {
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
+/* Vertically center the logo */
 .navbar__logo {
     width: 200px;
     height: auto;
     display: block;
 }
 
+
+/* Display desktop navigation items in one horizontal row */
 .navbar__links {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
 
+/* Style primary navigation links */
 .navbar__link {
     color: var(--uri-navy);
     font-weight: 700;
@@ -42,17 +49,21 @@
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.45);
 }
 
+/* Navigation link hover and keyboard-focus state */
 .navbar__link:hover,
 .navbar__link:focus-visible {
     color: var(--uri-white);
 }
 
+/* Indicate the currently active React route */
 .navbar__link--active {
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 0.4rem;
 }
 
+
+/* Style the Register dropdown button as a pill-shaped URI button */
 .navbar__button {
     padding: 0.7rem 1.2rem;
     border: 2px solid var(--uri-navy);
@@ -68,12 +79,10 @@
 
     cursor: pointer;
 
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
+/* Register button hover and focus state */
 .navbar__button:hover,
 .navbar__button:focus-visible {
     background: var(--uri-light-blue);
@@ -86,10 +95,13 @@
     outline-offset: 3px;
 }
 
+
+/* Establish a positioning reference for the Register dropdown menu */
 .navbar__dropdown {
     position: relative;
 }
 
+/* Align the Register label and dropdown arrow horizontally */
 .navbar__dropdown-toggle {
     display: flex;
     align-items: center;
@@ -97,6 +109,7 @@
     gap: 0.55rem;
 }
 
+/* Create a small CSS triangle to indicate the Register dropdown */
 .navbar__dropdown-arrow {
     width: 0;
     height: 0;
@@ -108,10 +121,17 @@
     transition: transform 0.2s ease;
 }
 
+/* Rotate arrow when Register menu is open */
 .navbar__dropdown-arrow--open {
     transform: rotate(180deg);
 }
 
+/*
+    Register dropdown menu:
+    - Position below the Register button
+    - Hide by default
+    - Animate into view when opened
+*/
 .navbar__dropdown-menu {
     position: absolute;
     top: calc(100% + 0.75rem);
@@ -132,12 +152,10 @@
     background: var(--uri-white);
     box-shadow: 0 18px 45px rgba(0, 33, 71, 0.18);
 
-    transition:
-        opacity 0.2s ease,
-        transform 0.2s ease,
-        visibility 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
+/* Display the Register dropdown */
 .navbar__dropdown-menu--open {
     visibility: visible;
     opacity: 1;
@@ -145,6 +163,7 @@
     transform: translateY(0);
 }
 
+/* Style each registration option as a stacked title and description */
 .navbar__dropdown-item {
     display: flex;
     flex-direction: column;
@@ -156,11 +175,10 @@
     color: var(--uri-navy);
     text-decoration: none;
 
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
+/* Registration option hover and keyboard-focus state */
 .navbar__dropdown-item:hover,
 .navbar__dropdown-item:focus-visible {
     background: rgba(107, 169, 232, 0.16);
@@ -168,20 +186,25 @@
     outline: none;
 }
 
+/* Visible keyboard-focus indicator for dropdown options */
 .navbar__dropdown-item:focus-visible {
     box-shadow: inset 0 0 0 2px var(--uri-light-blue);
 }
 
+/* Any dropdown item immediately following another dropdown item gets extra spacing above it */
 .navbar__dropdown-item + .navbar__dropdown-item {
     margin-top: 0.25rem;
 }
 
+
+/* Style the primary label for each registration option */
 .navbar__dropdown-title {
     color: var(--uri-navy);
     font-size: 0.95rem;
     font-weight: 800;
 }
 
+/* Style the supporting description beneath each registration option */
 .navbar__dropdown-description {
     color: var(--gray-500);
     font-size: 0.8rem;
@@ -189,8 +212,8 @@
     line-height: 1.4;
 }
 
-/* Mobile navigation toggle */
 
+/* Mobile navigation toggle */
 .navbar__toggle {
     display: none;
     flex-direction: column;
@@ -204,6 +227,7 @@
     cursor: pointer;
 }
 
+/* Create the three hamburger-menu lines */
 .navbar__toggle span {
     width: 26px;
     height: 3px;
@@ -212,14 +236,16 @@
     border-radius: 999px;
 }
 
+/* Keyboard-focus indicator for mobile navigation button */
 .navbar__toggle:focus-visible {
     outline: 3px solid var(--uri-navy);
     outline-offset: 3px;
 }
 
-/* Smaller desktop */
 
+/* Smaller desktop */
 @media (max-width: 1100px) {
+    /* Reduce navigation spacing so all items continue to fit */
     .navbar {
         padding: 0.75rem 4%;
     }
@@ -233,28 +259,29 @@
     }
 }
 
-/* Tablet */
 
+/* Tablet */
 @media (max-width: 850px) {
+    /* Keep navbar sticky and adjust gradient for narrower screens */
     .navbar {
         position: sticky;
-
-        background: linear-gradient(
-            90deg,
-            var(--uri-navy) 0%,
-            var(--uri-light-blue) 65%,
-            var(--uri-white) 100%
-        );
+        background: linear-gradient(90deg, var(--uri-navy) 0%, var(--uri-light-blue) 65%, var(--uri-white) 100%);
     }
 
+    /* Reduce logo size */
     .navbar__logo {
         width: 175px;
     }
 
+    /* Display hamburger-menu button */
     .navbar__toggle {
         display: flex;
     }
 
+    /*
+        Hide primary navigation by default and position it
+        below the navbar as a vertical mobile menu
+    */
     .navbar__links {
         position: absolute;
         top: 100%;
@@ -273,10 +300,12 @@
         box-shadow: 0 12px 24px rgba(0, 33, 71, 0.12);
     }
 
+    /* Display mobile navigation when opened */
     .navbar__links--open {
         display: flex;
     }
 
+    /* Increase link padding for larger mobile touch targets */
     .navbar__link {
         padding: 0.9rem 0;
         font-size: 1rem;
@@ -287,6 +316,7 @@
         color: var(--uri-light-blue);
     }
 
+    /* Make Register section fill the mobile menu width */
     .navbar__dropdown {
         width: 100%;
         margin-top: 0.75rem;
@@ -296,6 +326,10 @@
         width: 100%;
     }
 
+    /*
+        Display the Register submenu inline within the mobile
+        navigation instead of as a floating desktop dropdown
+    */
     .navbar__dropdown-menu {
         position: static;
 
@@ -316,6 +350,7 @@
         transition: none;
     }
 
+    /* Display mobile registration submenu when opened */
     .navbar__dropdown-menu--open {
         display: block;
     }
@@ -325,9 +360,10 @@
     }
 }
 
-/* Small phones */
 
+/* Small phones */
 @media (max-width: 480px) {
+    /* Reduce spacing and element sizes for very narrow screens */
     .navbar {
         padding: 0.65rem 5%;
     }

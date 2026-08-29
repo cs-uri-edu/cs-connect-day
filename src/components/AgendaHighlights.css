@@ -1,19 +1,21 @@
+/* Main Agenda Highlights section */
 .agenda-highlights {
     position: relative;
     padding: 5rem 6%;
     background: var(--gray-100);
 }
 
+/* Header layout containing the section heading and Program button */
 .agenda-highlights__header {
     max-width: 1150px;
     margin: 0 auto 3rem;
-
     display: flex;
     align-items: end;
     justify-content: space-between;
     gap: 2rem;
 }
 
+/* Small uppercase label displayed above the main section heading */
 .section-eyebrow {
     margin-bottom: 0.75rem;
     color: var(--uri-accessible-blue);
@@ -49,12 +51,15 @@
     outline-offset: 3px;
 }
 
+
+/* Container for the vertical agenda timeline */
 .timeline {
     position: relative;
     max-width: 1150px;
     margin: 0 auto;
 }
 
+/* Draw the vertical line behind the timeline markers */
 .timeline::before {
     content: "";
     position: absolute;
@@ -62,33 +67,32 @@
     bottom: 0;
     left: 19px;
     width: 3px;
-    background: linear-gradient(
-        180deg,
-        var(--uri-navy),
-        var(--uri-light-blue)
-    );
+    background: linear-gradient(180deg, var(--uri-navy), var(--uri-light-blue));
     transform-origin: top;
     animation: drawLine 1.2s ease-out both;
 }
 
+/* Each timeline row contains the marker column and the agenda card */
 .timeline__item {
     position: relative;
     display: grid;
     grid-template-columns: 40px 1fr;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
-
     opacity: 0;
     transform: translateY(24px);
     animation: fadeUp 0.7s ease forwards;
 }
 
+/* Stagger the entrance animation so timeline cards appear sequentially */
 .timeline__item:nth-child(1) { animation-delay: 0.1s; }
 .timeline__item:nth-child(2) { animation-delay: 0.2s; }
 .timeline__item:nth-child(3) { animation-delay: 0.3s; }
 .timeline__item:nth-child(4) { animation-delay: 0.4s; }
 .timeline__item:nth-child(5) { animation-delay: 0.5s; }
+.timeline__item:nth-child(6) { animation-delay: 0.6s; }
 
+/* Circular marker positioned over the vertical timeline line */
 .timeline__marker {
     position: relative;
     display: flex;
@@ -106,18 +110,13 @@
     z-index: 1;
 }
 
+/* White content card for each agenda session */
 .timeline__card {
     padding: 1.5rem;
     border-radius: 24px;
     background: var(--uri-white);
     border: 1px solid var(--gray-200);
     box-shadow: 0 14px 36px rgba(0, 33, 71, 0.1);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.timeline__card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 48px rgba(0, 33, 71, 0.16);
 }
 
 .timeline__time {
@@ -128,6 +127,7 @@
     text-transform: uppercase;
 }
 
+/* Two-column desktop layout: session details on the left and description on the right */
 .timeline__content {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
@@ -140,9 +140,19 @@
     font-size: 1.6rem;
 }
 
+/* Optional session topic shown between the session title and location */
+.timeline__subtitle {
+    margin-bottom: 0.4rem;
+    color: var(--uri-navy);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
 .timeline__location {
     color: var(--gray-500);
     font-weight: 700;
+    line-height: 1.5;
 }
 
 .timeline__description {
@@ -151,11 +161,28 @@
     line-height: 1.7;
 }
 
+/* Stack featured speakers, organizations, and moderator information */
 .timeline__featured {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
     color: var(--uri-navy);
+}
+
+.timeline__featured-line {
+    margin: 0;
+    color: var(--uri-navy);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Emphasize labels such as "Moderator:" */
+.timeline__featured-label {
     font-weight: 800;
 }
 
+
+/* Animate the timeline line downward when the section loads */
 @keyframes drawLine {
     from {
         transform: scaleY(0);
@@ -166,12 +193,14 @@
     }
 }
 
+/* Fade each agenda card upward into its final position */
 @keyframes fadeUp {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 
 /* Smaller desktop */
 @media (max-width: 1200px) {
@@ -290,5 +319,18 @@
 
     .timeline__time {
         font-size: 0.85rem;
+    }
+}
+
+/* Users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .timeline::before,
+    .timeline__item {
+        animation: none;
+    }
+
+    .timeline__item {
+        opacity: 1;
+        transform: none;
     }
 }

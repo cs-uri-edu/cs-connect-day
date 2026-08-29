@@ -1,0 +1,691 @@
+/* =========================================================
+   PROGRAM PAGE
+   ========================================================= */
+
+.agenda-page {
+    min-height: 100vh;
+    background: var(--uri-white);
+}
+
+
+/* =========================================================
+   PROGRAM HERO
+   ========================================================= */
+
+.agenda-hero {
+    padding: 5rem 6%;
+    background: linear-gradient(
+        105deg,
+        var(--uri-navy) 0%,
+        #174f86 62%,
+        var(--uri-light-blue) 100%
+    );
+}
+
+.agenda-hero__content {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.agenda-hero__date {
+    width: fit-content;
+    margin: 0 0 1.25rem;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+
+    color: var(--uri-white);
+
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.agenda-hero h1 {
+    max-width: 850px;
+    margin-bottom: 1.25rem;
+
+    color: var(--uri-white);
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1;
+}
+
+.agenda-hero__description {
+    max-width: 760px;
+    margin: 0;
+
+    color: var(--uri-white);
+
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   IN-PAGE PROGRAM NAVIGATION
+   ========================================================= */
+
+.program-nav {
+    position: sticky;
+    top: 72px;
+    z-index: 20;
+
+    border-bottom: 1px solid var(--gray-200);
+    background: rgba(255, 255, 255, 0.97);
+
+    box-shadow: 0 6px 20px rgba(0, 33, 71, 0.08);
+}
+
+.program-nav__inner {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 1rem 6%;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.program-nav button {
+    flex-shrink: 0;
+    padding: 0.65rem 0.9rem;
+
+    border: none;
+    border-radius: 999px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: transparent;
+    color: var(--uri-navy);
+
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.program-nav button:hover,
+.program-nav button:focus-visible {
+    background: var(--uri-navy);
+    color: var(--uri-white);
+}
+
+.program-nav button:focus {
+    outline: none;
+}
+
+.program-nav button:focus-visible {
+    box-shadow: 0 0 0 3px var(--uri-light-blue);
+}
+
+
+/* =========================================================
+   SHARED PROGRAM SECTION LAYOUT
+   ========================================================= */
+
+.program-section {
+    padding: 5rem 6%;
+    scroll-margin-top: 10rem;
+}
+
+.program-section--alternate {
+    background: var(--gray-100);
+}
+
+.program-section--feature {
+    background: var(--uri-white);
+}
+
+.program-section--workshops {
+    background: linear-gradient(
+        180deg,
+        var(--uri-white) 0%,
+        #f6faff 100%
+    );
+}
+
+.program-section__header,
+.program-feature,
+.speaker-grid,
+.program-moderator,
+.program-workshops,
+.program-workshops__cta {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.program-section__header {
+    margin-bottom: 2.5rem;
+}
+
+.program-section__header h2,
+.program-feature__intro h2 {
+    max-width: 850px;
+    margin-bottom: 1rem;
+
+    color: var(--uri-navy);
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.08;
+}
+
+.program-section__header > p:last-child,
+.program-feature__description {
+    max-width: 820px;
+
+    color: var(--gray-900);
+
+    font-size: 1.08rem;
+    line-height: 1.75;
+}
+
+.program-section__meta,
+.program-feature__meta {
+    margin-bottom: 1rem;
+
+    color: var(--uri-accessible-blue);
+
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FEATURED SESSION
+   ========================================================= */
+
+.program-feature__intro {
+    margin-bottom: 2.5rem;
+}
+
+
+/* =========================================================
+   SPEAKER / PANELIST CARDS
+   ========================================================= */
+
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* Featured speakers and moderators span the full content width */
+.speaker-grid--featured,
+.speaker-grid--moderator {
+    grid-template-columns: 1fr;
+}
+
+.speaker-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+
+    padding: 1.75rem;
+
+    border: 1px solid rgba(0, 33, 71, 0.1);
+    border-radius: 24px;
+
+    background: var(--uri-white);
+
+    box-shadow: 0 12px 32px rgba(0, 33, 71, 0.08);
+}
+
+.speaker-card__visual {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        var(--uri-navy),
+        #174f86
+    );
+}
+
+.speaker-card__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.speaker-card__initials {
+    color: var(--uri-white);
+
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+
+.speaker-card__role {
+    margin-bottom: 0.4rem;
+
+    color: var(--uri-accessible-blue);
+
+    font-size: 0.88rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.speaker-card h3 {
+    margin-bottom: 0.4rem;
+
+    color: var(--uri-navy);
+
+    font-size: 1.45rem;
+    line-height: 1.2;
+}
+
+.speaker-card__position {
+    margin-bottom: 1rem;
+
+    color: var(--uri-navy);
+
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.speaker-card__position span {
+    display: block;
+}
+
+.speaker-card__bio {
+    margin: 0;
+
+    color: var(--gray-900);
+
+    line-height: 1.7;
+}
+
+
+/* Moderator section following a panel */
+.program-moderator {
+    margin-top: 3rem;
+}
+
+.program-moderator__header {
+    margin-bottom: 1rem;
+}
+
+
+/* =========================================================
+   WORKSHOP PREVIEW
+   ========================================================= */
+
+.program-workshops {
+    margin-top: 2.5rem;
+}
+
+.program-workshop-session + .program-workshop-session {
+    margin-top: 3rem;
+}
+
+.program-workshop-session > h3 {
+    margin-bottom: 1.25rem;
+
+    color: var(--uri-navy);
+
+    font-size: 1.45rem;
+    line-height: 1.3;
+}
+
+.program-workshop-session > h3 span {
+    display: block;
+    margin-top: 0.25rem;
+
+    color: var(--uri-accessible-blue);
+
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.program-workshop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.program-workshop-card {
+    padding: 1.5rem;
+
+    border: 1px solid rgba(0, 33, 71, 0.1);
+    border-radius: 20px;
+
+    background: var(--uri-white);
+
+    box-shadow: 0 10px 24px rgba(0, 33, 71, 0.07);
+}
+
+.program-workshop-card h4 {
+    margin-bottom: 0.7rem;
+
+    color: var(--uri-navy);
+
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+.program-workshop-card p {
+    margin: 0;
+
+    color: var(--gray-900);
+
+    line-height: 1.65;
+}
+
+.program-workshops__status {
+    max-width: 1150px;
+    margin: 2rem auto 0;
+    padding: 1.25rem;
+
+    border-radius: 14px;
+
+    background: var(--gray-100);
+    color: var(--uri-navy);
+
+    font-weight: 700;
+}
+
+.program-workshops__status--error {
+    border-left: 4px solid var(--uri-accessible-blue);
+}
+
+.program-workshops__cta {
+    margin-top: 2.5rem;
+}
+
+
+.program-workshop-presenters {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+
+    border-top: 1px solid var(--gray-200);
+}
+
+.program-workshop-presenter-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;;
+}
+
+.program-workshop-presenter {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.program-workshop-presenter__visual {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        var(--uri-navy),
+        #174f86
+    );
+
+    color: var(--uri-white);
+
+    font-weight: 900;
+}
+
+.program-workshop-presenter__visual img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.program-workshop-presenter__content h5 {
+    margin: 0 0 0.35rem;
+
+    color: var(--uri-navy);
+
+    font-size: 1.05rem;
+    line-height: 1.3;
+}
+
+.program-workshop-presenter__position {
+    margin: 0 0 0.65rem;
+
+    color: var(--uri-navy);
+
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.program-workshop-presenter__position span {
+    display: block;
+}
+
+.program-workshop-presenter__bio {
+    margin: 0;
+
+    color: var(--gray-900);
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* Link to the dedicated Workshops page */
+.program-button {
+    min-height: 48px;
+    padding: 0.9rem 1.4rem;
+
+    border: 2px solid var(--uri-navy);
+    border-radius: 999px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--uri-navy);
+    color: var(--uri-white);
+
+    font-size: 1rem;
+    font-weight: 800;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.program-button:hover,
+.program-button:focus-visible {
+    border-color: var(--uri-light-blue);
+
+    background: var(--uri-light-blue);
+    color: var(--uri-navy);
+
+    transform: translateY(-2px);
+}
+
+.program-button:focus-visible {
+    outline: 3px solid var(--uri-navy);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+/* Smaller desktop */
+@media (max-width: 1200px) {
+    .agenda-hero,
+    .program-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .program-nav__inner {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+/* Tablet */
+@media (max-width: 900px) {
+    .agenda-hero {
+        background: linear-gradient(
+            180deg,
+            var(--uri-navy) 0%,
+            #174f86 62%,
+            var(--uri-light-blue) 100%
+        );
+    }
+
+    .program-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .speaker-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .speaker-grid--featured,
+    .speaker-grid--moderator {
+        grid-template-columns: 1fr;
+    }
+
+    .program-workshop-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 650px) {
+    .agenda-hero {
+        padding: 4rem 6% 3.5rem;
+    }
+
+    .agenda-hero__description {
+        font-size: 1.08rem;
+    }
+
+    .program-nav__inner {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .program-nav button {
+        padding: 0.55rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .program-section {
+        scroll-margin-top: 9rem;
+    }
+
+    .speaker-card {
+        grid-template-columns: 90px 1fr;
+        gap: 1.15rem;
+
+        padding: 1.35rem;
+    }
+
+    .speaker-card__visual {
+        width: 90px;
+        height: 90px;
+
+        border-radius: 18px;
+    }
+
+    .speaker-card__initials {
+        font-size: 1.5rem;
+    }
+
+    .program-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* Small phones */
+@media (max-width: 430px) {
+    .agenda-hero,
+    .program-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .agenda-hero h1 {
+        font-size: clamp(2.25rem, 11vw, 3rem);
+        line-height: 1.05;
+    }
+
+    .program-nav__inner {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    /*
+     * Stack the speaker visual above the person's information
+     * when horizontal space becomes limited.
+     */
+    .speaker-card {
+        grid-template-columns: 1fr;
+    }
+
+    .speaker-card__visual {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .program-nav button,
+    .program-button {
+        transition: none;
+    }
+
+    .program-button:hover,
+    .program-button:focus-visible {
+        transform: none;
+    }
+}

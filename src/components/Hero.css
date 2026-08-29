@@ -1,3 +1,10 @@
+/*
+    Main hero section:
+    - Fill approximately the remaining viewport height below the navbar
+    - Create two columns for the logo and information card
+    - Vertically center the content
+    - Apply the URI horizontal gradient background
+*/
 .hero {
     min-height: calc(100vh - 90px);
     display: grid;
@@ -6,20 +13,21 @@
     gap: 3rem;
 
     padding: 5rem 6%;
-    background: linear-gradient(
-        90deg,
-        var(--uri-navy) 0%,
-        var(--uri-light-blue) 45%,
-        var(--uri-white) 100%
-    );
+    background: linear-gradient(90deg, var(--uri-navy) 0%, var(--uri-light-blue) 45%, var(--uri-white) 100%);
 }
 
+
+/*
+    Left side of hero:
+    Stack the event information and logo vertically and horizontally center them within the column
+*/
 .hero__left {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Event date and location displayed above the logo */
 .hero__eyebrow {
     margin-bottom: 2rem;
     color: var(--uri-white);
@@ -30,12 +38,21 @@
     text-align: center;
 }
 
+/*
+    Event logo:
+    Allow the logo to shrink responsively but prevent it from becoming wider than 560px on normal desktops
+*/
 .hero__logo {
     width: min(100%, 560px);
     height: auto;
     display: block;
 }
 
+
+/*
+    Right-side event information card:
+    Limit its width and create a semi-transparent glass-style card over the hero gradient
+*/
 .hero__right {
     max-width: 560px;
     padding: 2rem;
@@ -45,6 +62,7 @@
     backdrop-filter: blur(10px);
 }
 
+/* Event title inside information card */
 .hero__right h1 {
     margin-bottom: 1.25rem;
     color: var(--uri-navy);
@@ -52,6 +70,7 @@
     line-height: 1.1;
 }
 
+/* Event description inside information card */
 .hero__description {
     margin-bottom: 2rem;
     color: var(--gray-900);
@@ -60,12 +79,18 @@
     text-align: left;
 }
 
+
+/* Arrange the four countdown items (days, hours, minutes, seconds) into equal columns */
 .countdown {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.75rem;
 }
 
+/*
+    Individual countdown tile:
+    Keep each tile square and center its content
+*/
 .countdown__item {
     min-width: 0;
     aspect-ratio: 1 / 1;
@@ -81,12 +106,14 @@
     justify-content: center;
 }
 
+/* Countdown number */
 .countdown__item span {
     display: block;
     font-size: clamp(1.4rem, 2.5vw, 2.25rem);
     font-weight: 800;
 }
 
+/* Countdown label (Days, Hours, Minutes, Seconds) */
 .countdown__item p {
     margin-top: 0.25rem;
     color: var(--uri-light-blue);
@@ -98,7 +125,65 @@
 
 
 
-/* Smaller desktop */
+/*
+    Large desktop:
+    Increase the size and spacing of hero content on wide desktop displays where
+    the default content would otherwise appear too small
+*/
+@media (min-width: 1600px) {
+    .hero {
+        grid-template-columns: 1.2fr 0.9fr;
+        gap: 5rem;
+        padding: 6rem 8%;
+    }
+
+    .hero__eyebrow {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero__logo {
+        width: min(100%, 680px);
+    }
+
+    .hero__right {
+        max-width: 650px;
+        padding: 2.75rem;
+        border-radius: 32px;
+    }
+
+    .hero__right h1 {
+        font-size: 3.25rem;
+    }
+
+    .hero__description {
+        font-size: 1.2rem;
+        line-height: 1.75;
+    }
+
+    .countdown {
+        gap: 1rem;
+    }
+
+    .countdown__item {
+        padding: 1rem;
+        border-radius: 20px;
+    }
+
+    .countdown__item span {
+        font-size: 2.75rem;
+    }
+
+    .countdown__item p {
+        font-size: 0.8rem;
+    }
+}
+
+
+/*
+    Smaller desktop:
+    Reduce column proportions, spacing, logo size, and information-card width
+*/
 @media (max-width: 1200px) {
     .hero {
         grid-template-columns: 1.1fr 0.95fr;
@@ -115,7 +200,13 @@
     }
 }
 
-/* Tablet */
+
+/*
+    Tablet:
+    - Change the two-column hero into a single-column layout
+    - Change the gradient from horizontal to vertical
+    - Center the logo and information card
+*/
 @media (max-width: 900px) {
     .hero {
         min-height: auto;
@@ -123,12 +214,7 @@
         gap: 2.5rem;
         padding: 4rem 6%;
         text-align: center;
-        background: linear-gradient(
-            180deg,
-            var(--uri-navy) 0%,
-            var(--uri-light-blue) 55%,
-            var(--uri-white) 100%
-        );
+        background: linear-gradient(180deg, var(--uri-navy) 0%, var(--uri-light-blue) 55%, var(--uri-white) 100%);
     }
 
     .hero__logo {
@@ -164,7 +250,11 @@
     }
 }
 
-/* Mobile */
+
+/*
+    Mobile:
+    Reduce spacing, logo size, information-card size, and typography for smaller screens
+*/
 @media (max-width: 650px) {
     .hero {
         padding: 3rem 6%;
@@ -196,7 +286,11 @@
     }
 }
 
-/* Small phones */
+
+/*
+    Small phones:
+    Further reduce spacing, logo size, card padding, and countdown typography for very narrow screens
+*/
 @media (max-width: 430px) {
     .hero {
         padding: 2.5rem 5%;

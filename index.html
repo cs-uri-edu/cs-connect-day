@@ -1,12 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
+
+<!-- Root HTML document for the React application -->
 <html lang="en">
   <head>
+     <!-- Use UTF-8 character encoding -->
     <meta charset="UTF-8" />
+
+    <!-- Configure the page to scale correctly on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Give search engines and link previews a concise description of the site -->
+    <meta name="description" content="URI CS Connect Day brings students, alumni, and industry partners together for career conversations, networking, and hands-on workshops."/>
+
+    <!-- Browser tab/page title -->
     <title>URI CS Connect Day</title>
   </head>
+
   <body>
+     <!-- React mounts and renders the application inside this element -->
     <div id="root"></div>
+
+    <!-- Load the React application starting with main.jsx -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Load Google Identity Services for Google Sign-In authentication -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </body>
 </html>

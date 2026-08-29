@@ -1,18 +1,20 @@
+/* Main participating organizations section */
 .partners {
     padding: 5rem 6%;
     background: var(--uri-white);
 }
 
+/* Header layout containing the section heading and Partner With Us button */
 .partners__header {
     max-width: 1150px;
     margin: 0 auto 3rem;
-
     display: flex;
     align-items: end;
     justify-content: space-between;
     gap: 2rem;
 }
 
+/* Small uppercase label displayed above the main section heading */
 .section-eyebrow {
     margin-bottom: 0.75rem;
     color: var(--uri-accessible-blue);
@@ -28,6 +30,7 @@
     line-height: 1.05;
 }
 
+/* Pill-shaped link to the Partner With Us page */
 .partners__button {
     flex-shrink: 0;
     padding: 0.85rem 1.25rem;
@@ -38,53 +41,52 @@
     text-decoration: none;
 }
 
-.partners__button:hover {
+.partners__button:hover,
+.partners__button:focus-visible {
     background: var(--uri-light-blue);
 }
 
+.partners__button:focus-visible {
+    outline: 3px solid var(--uri-light-blue);
+    outline-offset: 3px;
+}
+
+/* Four-column grid of participating organization cards */
 .partners__grid {
     max-width: 1100px;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
 }
 
+/* Card used to center each organization logo */
 .partner-card {
     min-height: 130px;
     border-radius: 22px;
-
-    background: linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #f3f9ff 45%,
-        #dceefe 100%
-    );
-
+    background: linear-gradient(135deg,#ffffff 0%, #f3f9ff 45%, #dceefe 100%);
     border: 1px solid rgba(0, 33, 71, 0.08);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.partner-card:hover {
+.partner-card:hover,
+.partner-card:focus-within {
     transform: translateY(-4px);
     box-shadow: 0 18px 42px rgba(0, 33, 71, 0.12);
 }
 
+/* Constrain organization logos while preserving their original proportions */
 .partner-logo {
     max-width: 150px;
     max-height: 60px;
-
     width: auto;
     height: auto;
-
     object-fit: contain;
 }
+
 
 /* Smaller desktop */
 @media (max-width: 1200px) {
@@ -97,6 +99,7 @@
         max-width: 1050px;
     }
 }
+
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -118,10 +121,12 @@
         align-self: flex-start;
     }
 
+    /* Reduce the logo grid from four columns to two */
     .partners__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 
 /* Mobile */
 @media (max-width: 650px) {
@@ -148,6 +153,7 @@
     }
 }
 
+
 /* Small phones */
 @media (max-width: 430px) {
     .partners {
@@ -159,6 +165,7 @@
         text-align: center;
     }
 
+    /* Stack organization cards into a single column */
     .partners__grid {
         grid-template-columns: 1fr;
     }
@@ -170,5 +177,18 @@
     .partner-logo {
         max-width: 125px;
         max-height: 50px;
+    }
+}
+
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .partner-card {
+        transition: none;
+    }
+
+    .partner-card:hover,
+    .partner-card:focus-within {
+        transform: none;
     }
 }

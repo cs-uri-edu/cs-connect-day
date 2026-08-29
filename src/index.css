@@ -1,3 +1,4 @@
+/* Define reusable global color variables for the application */
 :root {
   --uri-navy: #002147;
   --uri-light-blue: #6BA9E8;
@@ -12,16 +13,27 @@
   --accent: #6BA9E8;
 }
 
+
+/*
+    Reset default margin and padding for all elements 
+    Make width/height calculations include padding and borders
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* Use smooth scrolling when navigating to anchors on the page */
 html {
     scroll-behavior: smooth;
 }
 
+
+/*
+    Define the default font, text color, and background for the entire document
+*/
 body {
     margin: 0;
     font-family: Inter, Arial, Helvetica, sans-serif;
@@ -29,37 +41,29 @@ body {
     background: var(--uri-white);
 }
 
+
+/*
+    Ensure the React application is at least as tall as the browser viewport
+*/
 #root {
     min-height: 100vh;
 }
 
-.skip-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2000;
-    padding: 0.75rem 1rem;
-    background: var(--uri-navy);
-    color: var(--uri-white);
-    text-decoration: none;
-    transform: translateY(-120%);
-}
 
-.skip-link:focus {
-    transform: translateY(0);
-}
-
-button,
+/* Add smooth visual transitions when buttons and links change outline, background, or text color */
+button, 
 a {
     transition: outline-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-button:focus-visible,
-a:focus-visible {
+
+/* Add a visible keyboard-focus indicator to buttons and links */
+button:focus-visible, a:focus-visible {
     outline: 3px solid var(--uri-navy);
     outline-offset: 3px;
 }
 
+/* Visually hide content while keeping it available to screen readers and other assistive technology */
 .sr-only {
     position: absolute;
     width: 1px;

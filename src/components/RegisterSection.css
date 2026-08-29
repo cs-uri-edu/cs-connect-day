@@ -1,8 +1,10 @@
+/* Main registration section */
 .registration {
     padding: 5rem 6%;
     background: var(--uri-white);
 }
 
+/* Section heading container */
 .registration__header {
     max-width: 1150px;
     margin: 0 auto 3rem;
@@ -11,57 +13,45 @@
 .registration__header h2 {
     max-width: 760px;
     margin: 0 0 1rem;
-
     color: var(--uri-navy);
     font-size: clamp(2rem, 4vw, 3.5rem);
     line-height: 1.05;
 }
 
+/* Two-column layout for registration cards */
 .registration__grid {
     max-width: 1150px;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
+/* Shared layout and appearance for both registration cards */
 .registration-card {
     min-height: 535px;
     padding: 3rem;
     border: 1px solid rgba(0, 33, 71, 0.1);
     border-radius: 28px;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     gap: 2.5rem;
-
     box-shadow: 0 16px 38px rgba(0, 33, 71, 0.1);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.registration-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 22px 48px rgba(0, 33, 71, 0.15);
-}
 
+/* Navy styling for the main event card */
 .registration-card--main {
     background: var(--uri-navy);
     color: var(--uri-white);
 }
 
+/* Light gradient styling for the workshop card */
 .registration-card--workshops {
-    background: linear-gradient(
-        145deg,
-        var(--uri-white) 0%,
-        #f7fbff 55%,
-        #edf6ff 100%
-    );
+    background: linear-gradient(145deg, var(--uri-white) 0%, #f7fbff 55%, #edf6ff 100%);
     color: var(--gray-900);
 }
 
@@ -69,17 +59,18 @@
     width: 100%;
 }
 
+/* Icon container displayed at the top of each card */
 .registration-card__icon {
     width: 54px;
     height: 54px;
     margin-bottom: 1.75rem;
     border-radius: 16px;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Size SVG icons relative to their icon containers */
 .registration-card__icon svg {
     width: 27px;
     height: 27px;
@@ -96,11 +87,11 @@
     color: var(--uri-navy);
 }
 
+/* Small uppercase category label above each card heading */
 .registration-card__label {
     margin: 0 0 0.8rem;
-
     color: var(--uri-light-blue);
-    font-size: 0.84rem;
+    font-size: 0.95rem;
     font-weight: 900;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -113,7 +104,6 @@
 .registration-card h3 {
     max-width: 490px;
     margin: 0 0 1.2rem;
-
     font-size: clamp(1.8rem, 3vw, 2.45rem);
     line-height: 1.12;
 }
@@ -126,10 +116,10 @@
     color: var(--uri-navy);
 }
 
+/* Main descriptive text within each card */
 .registration-card__description {
     max-width: 520px;
     margin: 0;
-
     font-size: 1.03rem;
     line-height: 1.7;
 }
@@ -139,9 +129,10 @@
 }
 
 .registration-card--workshops .registration-card__description {
-    color: var(--gray-500);
+    color: var(--gray-900);
 }
 
+/* Divided area containing activities included with registration */
 .registration-card__details {
     margin-top: 2rem;
     padding-top: 1.75rem;
@@ -158,8 +149,7 @@
 
 .registration-card__details-title {
     margin: 0 0 0.9rem;
-
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 800;
 }
 
@@ -171,31 +161,29 @@
     color: var(--uri-navy);
 }
 
+/* Two-column list of included activities */
 .registration-card__list {
     margin: 0;
     padding: 0;
-
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.8rem 1.25rem;
-
     list-style: none;
 }
 
 .registration-card__list li {
     position: relative;
     padding-left: 1.45rem;
-
-    font-size: 0.94rem;
-    line-height: 1.45;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
+/* Create custom circular bullets for each list item */
 .registration-card__list li::before {
     content: "";
     position: absolute;
     top: 0.42rem;
     left: 0;
-
     width: 7px;
     height: 7px;
     border-radius: 50%;
@@ -210,37 +198,30 @@
 }
 
 .registration-card--workshops .registration-card__list li {
-    color: var(--gray-500);
+    color: var(--gray-900);
 }
 
 .registration-card--workshops .registration-card__list li::before {
     background: var(--uri-navy);
 }
 
+/* Shared pill-shaped CTA button styling */
 .registration-card__button {
     min-height: 48px;
     padding: 0.85rem 1.35rem;
     border: 2px solid var(--uri-light-blue);
     border-radius: 999px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.65rem;
-
     background: var(--uri-light-blue);
     color: var(--uri-navy);
-
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 800;
     line-height: 1;
     text-decoration: none;
-
-    transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .registration-card__button:hover,
@@ -256,6 +237,7 @@
     outline-offset: 4px;
 }
 
+/* Navy button variation used on the light workshop card */
 .registration-card__button--secondary {
     background: var(--uri-navy);
     border-color: var(--uri-navy);
@@ -293,6 +275,7 @@
         padding: 4rem 6%;
     }
 
+    /* Stack registration cards vertically on tablets and smaller screens */
     .registration__grid {
         grid-template-columns: 1fr;
     }
@@ -329,11 +312,13 @@
         border-radius: 14px;
     }
 
+    /* Stack activity lists into a single column */
     .registration-card__list {
         grid-template-columns: 1fr;
         gap: 0.75rem;
     }
 
+    /* Make CTA buttons full-width for easier touch interaction */
     .registration-card__button {
         width: 100%;
     }
@@ -365,7 +350,6 @@
         transition: none;
     }
 
-    .registration-card:hover,
     .registration-card__button:hover,
     .registration-card__button:focus-visible {
         transform: none;
