@@ -421,6 +421,12 @@ function Workshops() {
                     sessions,
                     workshop
                 ) => {
+
+                    // Hide workshops that are not currently open for registration
+                    if (Number(workshop.registration_open) !== 1) {
+                        return sessions;
+                    }
+
                     const sessionNumber =
                         Number(
                             workshop.session_number
