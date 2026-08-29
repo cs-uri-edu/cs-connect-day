@@ -128,7 +128,6 @@
 .workshops-registration-note__button:focus-visible {
     background: var(--uri-white);
     border-color: var(--uri-white);
-    color: var(--uri-navy);
     transform: translateY(-2px);
 }
 
@@ -203,7 +202,6 @@
 .workshops-status--error button:hover,
 .workshops-status--error button:focus-visible {
     background: var(--uri-light-blue);
-    color: var(--uri-navy);
 }
 
 .workshops-status--error button:focus-visible {
@@ -470,7 +468,6 @@
 .workshop-card__reserve-button:focus-visible:not(:disabled) {
     background: var(--uri-light-blue);
     border-color: var(--uri-light-blue);
-    color: var(--uri-navy);
     transform: translateY(-2px);
 }
 
@@ -938,7 +935,7 @@
     border-color: var(--uri-light-blue);
 
     background: var(--uri-light-blue);
-    color: var(--uri-navy);
+    
 }
 
 .reservation-modal__secondary {
