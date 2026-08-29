@@ -324,9 +324,20 @@
     letter-spacing: 0.04em;
 }
 
+.workshop-card__logo {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
 .workshop-card__logo img {
-    max-width: 80%;
-    max-height: 65%;
+    max-width: 100%;
+    max-height: 100%;
 
     width: auto;
     height: auto;
@@ -1190,14 +1201,13 @@
 
     .reservation-modal {
         padding: 1rem;
-        align-items: flex-end;
     }
 
     .reservation-modal__dialog {
         max-height: calc(100vh - 2rem);
         padding: 2rem 1.5rem;
 
-        border-radius: 26px 26px 20px 20px;
+        border-radius: 26px;
     }
 
     .reservation-modal__actions {
