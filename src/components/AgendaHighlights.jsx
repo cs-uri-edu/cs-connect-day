@@ -13,10 +13,6 @@ const agendaItems = [
     location: 'Memorial Union Ballroom',
     description:
       'Opening remarks from URI academic leadership welcoming students, alumni, faculty, and invited guests.',
-    featuredLines: [
-      'Pamela Swett — Dean, College of Arts & Sciences',
-      'Gavino Puggioni — Chair, Computer Science & Statistics',
-    ],
   },
   {
     time: '9:10 AM – 10:00 AM',
@@ -25,13 +21,6 @@ const agendaItems = [
     location: 'Memorial Union Ballroom',
     description:
       'An interactive conversation with Dr. Michael Littman exploring the future of artificial intelligence, how AI is reshaping computing and computer science education, and what these changes mean for students preparing for careers in technology.',
-    featuredLines: [
-      'Michael L. Littman — Associate Provost for Artificial Intelligence, Brown University',
-      {
-        label: 'Moderator',
-        text: 'TBA',
-      },
-    ],
   },
   {
     time: '10:00 AM – 11:00 AM',
@@ -40,13 +29,6 @@ const agendaItems = [
     location: 'Memorial Union Ballroom',
     description:
       'Industry leaders discuss how AI is changing recruiting, technical roles, and the skills and experiences employers value as students prepare to enter an evolving technology workforce.',
-    featuredLines: [
-      'AlgoArena • Axial Search • CodePath • Schneider Electric',
-      {
-        label: 'Moderator',
-        text: 'Joe Mazzone — CuraCourse Co-Founder & CEO',
-      },
-    ],
   },
   {
     time: '11:15 AM – 12:15 PM',
@@ -55,15 +37,6 @@ const agendaItems = [
     location: 'Memorial Union Ballroom',
     description:
       'URI CS alumni share their paths from college to industry, career growth, and lessons learned along the way.',
-    featuredLines: [
-      'Jason Aguirre — Atlassian',
-      'Meghan Andrews — Brightstar Lottery',
-      'Evelidis Bueno — Google',
-      {
-        label: 'Moderator',
-        text: 'TBA',
-      },
-    ],
   },
   {
     time: '12:30 PM – 1:50 PM',
@@ -78,9 +51,6 @@ const agendaItems = [
     location: 'Bliss & Fascitelli Center for Advanced Engineering',
     description:
       'Hands-on sessions focused on AI and data tools, cloud technologies, and emerging industry practices.',
-    featuredLines: [
-      'AlgoArena • Antigravity • Databricks • Fidelity',
-    ],
   },
 ];
 
