@@ -368,6 +368,83 @@ function Agenda() {
     }
 
 
+    const [activeSection, setActiveSection] = useState('registration');
+
+    useEffect(() => {
+        const sectionIds = [
+            'registration',
+            'welcome-address',
+            'fireside-chat',
+            'industry-panel',
+            'alumni-roundtable',
+            'networking-lunch',
+            'workshops',
+        ];
+
+        const sections = sectionIds
+            .map((sectionId) => document.getElementById(sectionId))
+            .filter(Boolean);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visibleSection = entries.find(
+                    (entry) => entry.isIntersecting
+                );
+
+                if (visibleSection) {
+                    setActiveSection(visibleSection.target.id);
+                }
+            },
+            {
+                rootMargin: '-25% 0px -65% 0px',
+                threshold: 0,
+            }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, []);
+
+
+    useEffect(() => {
+        if (!programNavRef.current) {
+            return;
+        }
+
+        const isMobile = window.matchMedia(
+            '(max-width: 650px)'
+        ).matches;
+
+        if (!isMobile) {
+            return;
+        }
+
+        const activeButton =
+            programNavRef.current.querySelector(
+                `[data-section="${activeSection}"]`
+            );
+
+        if (!activeButton) {
+            return;
+        }
+
+        const prefersReducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        const scrollLeft =
+            activeButton.offsetLeft -
+            programNavRef.current.clientWidth / 2 +
+            activeButton.offsetWidth / 2;
+
+        programNavRef.current.scrollTo({
+            left: scrollLeft,
+            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        });
+    }, [activeSection]);
+
+
     return (
         <main id="main-content" className="agenda-page">
 
@@ -401,6 +478,17 @@ function Agenda() {
                 <div className="program-nav__inner" ref={programNavRef}>
                     <button
                         type="button"
+                        data-section="registration"
+                        className={
+                            activeSection === 'registration'
+                                ? 'program-nav__item--active'
+                                : ''
+                        }
+                        aria-current={
+                            activeSection === 'registration'
+                                ? 'location'
+                                : undefined
+                        }
                         onClick={() => scrollToSection('registration')}
                     >
                         Registration
@@ -408,13 +496,36 @@ function Agenda() {
 
                     <button
                         type="button"
+                        data-section="welcome-address"
+                        className={
+                            activeSection === 'welcome-address'
+                                ? 'program-nav__item--active'
+                                : ''
+                        }
+                        aria-current={
+                            activeSection === 'welcome-address'
+                                ? 'location'
+                                : undefined
+                        }
                         onClick={() => scrollToSection('welcome-address')}
                     >
                         Welcome Address
                     </button>
 
+
                     <button
                         type="button"
+                        data-section="fireside-chat"
+                        className={
+                            activeSection === 'fireside-chat'
+                                ? 'program-nav__item--active'
+                                : ''
+                        }
+                        aria-current={
+                            activeSection === 'fireside-chat'
+                                ? 'location'
+                                : undefined
+                        }
                         onClick={() => scrollToSection('fireside-chat')}
                     >
                         Fireside Chat
@@ -422,6 +533,17 @@ function Agenda() {
 
                     <button
                         type="button"
+                        data-section="industry-panel"
+                        className={
+                            activeSection === 'industry-panel'
+                                ? 'program-nav__item--active'
+                                : ''
+                        }
+                        aria-current={
+                            activeSection === 'industry-panel'
+                                ? 'location'
+                                : undefined
+                        }
                         onClick={() => scrollToSection('industry-panel')}
                     >
                         Industry Panel
@@ -429,6 +551,17 @@ function Agenda() {
 
                     <button
                         type="button"
+                        data-section="alumni-roundtable"
+                        className={
+                            activeSection === 'alumni-roundtable'
+                                ? 'program-nav__item--active'
+                                : ''
+                        }
+                        aria-current={
+                            activeSection === 'alumni-roundtable'
+                                ? 'location'
+                                : undefined
+                        }
                         onClick={() => scrollToSection('alumni-roundtable')}
                     >
                         Alumni Roundtable
@@ -436,6 +569,17 @@ function Agenda() {
 
                     <button
                         type="button"
+                        data-section="networking-lunch"
+                        className={
+                            activeSection === 'networking-lunch'
+                                ? 'program-nav__item--active'
+                                : ''
+                        }
+                        aria-current={
+                            activeSection === 'networking-lunch'
+                                ? 'location'
+                                : undefined
+                        }
                         onClick={() => scrollToSection('networking-lunch')}
                     >
                         Networking Lunch
@@ -443,6 +587,17 @@ function Agenda() {
 
                     <button
                         type="button"
+                        data-section="workshops"
+                        className={
+                            activeSection === 'workshops'
+                                ? 'program-nav__item--active'
+                                : ''
+                        }
+                        aria-current={
+                            activeSection === 'workshops'
+                                ? 'location'
+                                : undefined
+                        }
                         onClick={() => scrollToSection('workshops')}
                     >
                         Workshops

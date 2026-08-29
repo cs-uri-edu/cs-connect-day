@@ -162,6 +162,11 @@
     box-shadow: 0 0 0 3px var(--uri-light-blue);
 }
 
+.program-nav button.program-nav__item--active {
+    background: var(--uri-navy);
+    color: var(--uri-white);
+}
+
 .program-nav__controls {
     max-width: 1150px;
     margin: 0 auto;
