@@ -1,5 +1,13 @@
 import { useState } from 'react';
 
+const presenterLogos = import.meta.glob(
+    '../assets/partner-logos/*',
+    {
+        eager: true,
+        import: 'default',
+    }
+);
+
 
 function formatTime(dateTime) {
     if (!dateTime) {
@@ -174,10 +182,11 @@ function WorkshopCard({
      * Keep this path consistent with however you
      * currently store your partner-logo assets.
      */
-    const presenterImage =
-        workshop.presenter_img
-            ? `${import.meta.env.BASE_URL}src/assets/partner-logos/${workshop.presenter_img}`
-            : null;
+    const presenterImage = workshop.presenter_img
+        ? presenterLogos[
+            `../assets/partner-logos/${workshop.presenter_img}`
+        ] || null
+        : null;
 
     const startTime =
         formatTime(
