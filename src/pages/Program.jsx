@@ -156,6 +156,15 @@ const workshopPresenters = {
             bio: 'Eli Young is the co-founder and CEO of AlgoArena, where he sets product direction and ships code daily. He studied Computer Science at Swarthmore College, competed in ICPC, and founded Lock In, a focus app for iOS and Android.',
         },
     ],
+    3: [
+        {
+            name: 'TBA',
+            title: 'TBA',
+            organization: 'Fidelity',
+            organizationUrl: 'https://students.fidelitycareers.com/',
+            bio: "TBA",
+        },
+    ],
     4: [
         {
             name: 'Michael Conti',
