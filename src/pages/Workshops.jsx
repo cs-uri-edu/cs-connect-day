@@ -148,10 +148,88 @@ function Workshops() {
         []
     );
 
+    useEffect(() => {
+        const savedCredential = sessionStorage.getItem('csConnectGoogleCredential');
+
+        if (!savedCredential) {
+            return;
+        }
+
+        const controller = new AbortController();
+
+        async function restoreAuthentication() {
+            try {
+                const apiUrl = import.meta.env.VITE_GOOGLE_AUTH_API_URL;
+
+                if (!apiUrl) {
+                    throw new Error('The authentication API has not been configured.');
+                }
+
+                const response =
+                    await fetch(
+                        apiUrl,
+                        {
+                            method: 'POST',
+
+                            headers: {
+                                'Content-Type':
+                                    'application/json',
+
+                                Accept:
+                                    'application/json',
+                            },
+
+                            body: JSON.stringify({
+                                credential:
+                                    savedCredential,
+                            }),
+
+                            signal:
+                                controller.signal,
+                        }
+                    );
+
+                const data = await response.json();
+
+                if (!response.ok || !data.success) {
+                    throw new Error(data.message || 'Your sign-in session has expired.');
+                }
+
+                setAuthenticatedUser(data.user);
+
+                setCredential(savedCredential);
+
+                await loadMyRegistrations(savedCredential);
+
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    return;
+                }
+
+                console.error('Unable to restore authentication:', error);
+
+                sessionStorage.removeItem('csConnectGoogleCredential');
+
+                setAuthenticatedUser(null);
+                setCredential(null);
+                setStudentRegistrations([]);
+            }
+        }
+
+        restoreAuthentication();
+
+        return () => {
+            controller.abort();
+        };
+    }, [loadMyRegistrations]);
+
+
     const handleAuthenticated = useCallback(
         async ({ user, credential }) => {
             setAuthenticatedUser(user);
             setCredential(credential);
+
+            sessionStorage.setItem('csConnectGoogleCredential', credential);
 
             setModalMessage('');
             setModalMessageType('success');
@@ -199,8 +277,15 @@ function Workshops() {
 
     const handleAuthenticationError =
         useCallback((message) => {
-            setModalMessage(message);
+            sessionStorage.removeItem(
+                'csConnectGoogleCredential'
+            );
 
+            setAuthenticatedUser(null);
+            setCredential(null);
+            setStudentRegistrations([]);
+
+            setModalMessage(message);
             setModalMessageType('error');
         }, []);
 
