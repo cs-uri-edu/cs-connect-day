@@ -10,12 +10,14 @@ import littman from '../assets/speakers/littman.jpg';
 
 import young from '../assets/speakers/young.jpg';
 import chappell from '../assets/speakers/chappell.webp';
+import flowers from '../assets/speakers/flowers.jpeg';
 import durand from '../assets/speakers/durand.png';
 import mazzone from '../assets/speakers/mazzone.jpg';
 
 import aguirre from '../assets/speakers/aguirre.jpeg';
 
 import luu from '../assets/speakers/luu.jpg';
+import hampton from '../assets/speakers/hampton.jpeg';
 import conti from '../assets/speakers/conti.webp';
 
 
@@ -66,7 +68,7 @@ const industryPanelists = [
         organizationUrl: 'https://algoarena.net/',
         role: 'Panelist',
         image: young,
-        bio: 'Eli Young is the co-founder and CEO of AlgoArena, an AI-native technical hiring platform that helps employers evaluate how candidates plan, prompt, debug, and build software with AI. A recent computer science graduate of Swarthmore College, he is also interested in AI-assisted programming, technical recruiting, and computer science education. His research on live, gamified classroom activities will be presented at the 2026 CCSC Southeastern Conference.',
+        bio: 'Eli Young is the co-founder and CEO of AlgoArena, a platform for building, teaching, and assessing software skills in the AI era. AlgoArena combines AI-native software development and technical assessments with competitive programming, guided practice, and live classroom tools for computer science education. A recent computer science graduate of Swarthmore College, Eli also conducts research on AI-assisted programming, technical assessment, and computing education. His recent work includes research on assessing AI-assisted programming, teaching vibecoding, and live gamified CS classrooms, with projects accepted at SIGCSE Virtual 2026 and the 2026 CCSC Southeastern Conference.',
     },
     {
         name: 'Sam Chappell',
@@ -79,10 +81,12 @@ const industryPanelists = [
     },
     {
         name: 'Cam Flowers',
+        title: 'Sr. Manager of AI Delivery & Partner Deployments',
         organization: 'CodePath',
         organizationUrl: 'https://www.codepath.org/',
         role: 'Panelist',
-        bio: '',
+        image: flowers,
+        bio: 'Cam Flowers is a senior software engineer, technology entrepreneur, and adjunct lecturer of computer science originally from Chicago, Illinois, and currently based in Atlanta, Georgia. At CodePath, he serves as the Senior Manager of AI Delivery and Partner Deployments, where he co-leads the Applied AI Engineering Pathway. This three-course program guides university students from AI fundamentals into applied AI fellowships across the country. This includes most notably the Claude Corps, a national, paid initiative launched in partnership with Anthropic that places early-career professionals at U.S. nonprofits to apply artificial intelligence to real-world problems.',
     },
     {
         name: 'Liz Durand',
@@ -153,16 +157,24 @@ const workshopPresenters = {
             organization: 'AlgoArena',
             organizationUrl: 'https://algoarena.net/',
             image: young,
-            bio: 'Eli Young is the co-founder and CEO of AlgoArena, where he sets product direction and ships code daily. He studied Computer Science at Swarthmore College, competed in ICPC, and founded Lock In, a focus app for iOS and Android.',
+            bio: 'Eli Young is the co-founder and CEO of AlgoArena, a platform for building, teaching, and assessing software skills in the AI era. AlgoArena combines AI-native software development and technical assessments with competitive programming, guided practice, and live classroom tools for computer science education. A recent computer science graduate of Swarthmore College, Eli also conducts research on AI-assisted programming, technical assessment, and computing education. His recent work includes research on assessing AI-assisted programming, teaching vibecoding, and live gamified CS classrooms, with projects accepted at SIGCSE Virtual 2026 and the 2026 CCSC Southeastern Conference.',
         },
     ],
     3: [
         {
-            name: 'TBA',
-            title: 'TBA',
+            name: 'Jacob Hampton',
+            title: 'Senior Software Engineer',
             organization: 'Fidelity',
             organizationUrl: 'https://students.fidelitycareers.com/',
-            bio: "TBA",
+            image: hampton,
+            bio: "Jacob Hampton is a CCRI and URI alumnus (Class of 2021) with five years of experience at Fidelity. He began his career with the firm as an entry-level Software Engineer and has since advanced to a Senior Software Engineer role. Throughout his tenure, he has contributed across three different teams, gaining diverse technical and business experience.",
+        },
+        {
+            name: 'Samuel Perez',
+            title: 'Full-Stack Developer',
+            organization: 'Fidelity',
+            organizationUrl: 'https://students.fidelitycareers.com/',
+            bio: "Sam is a 2024 URI alumnus and a Full-Stack Developer at Fidelity. Since joining the firm through the LEAP program, he has spent nearly two years developing innovative solutions and growing his expertise across the full technology stack.",
         },
     ],
     4: [
