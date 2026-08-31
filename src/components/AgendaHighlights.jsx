@@ -20,7 +20,7 @@ const agendaItems = [
     subtitle: 'Computing in the Age of AI',
     location: 'Memorial Union Ballroom',
     description:
-      'An interactive conversation with Michael L. Littman exploring the future of artificial intelligence, how AI is reshaping computing and computer science education, and what these changes mean for students preparing for careers in technology.',
+      'An interactive conversation with Dr. Michael L. Littman exploring the future of artificial intelligence, how AI is reshaping computing and computer science education, and what these changes mean for students preparing for careers in technology.',
   },
   {
     time: '10:00 AM – 11:00 AM',
