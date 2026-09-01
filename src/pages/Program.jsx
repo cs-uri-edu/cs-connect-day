@@ -17,6 +17,7 @@ import mazzone from '../assets/speakers/mazzone.jpg';
 import aguirre from '../assets/speakers/aguirre.jpeg';
 
 import luu from '../assets/speakers/luu.jpg';
+import wine from '../assets/speakers/wine.jpeg';
 import hampton from '../assets/speakers/hampton.jpeg';
 import conti from '../assets/speakers/conti.webp';
 
@@ -158,6 +159,16 @@ const workshopPresenters = {
             organizationUrl: 'https://algoarena.net/',
             image: young,
             bio: 'Eli Young is the co-founder and CEO of AlgoArena, a platform for building, teaching, and assessing software skills in the AI era. AlgoArena combines AI-native software development and technical assessments with competitive programming, guided practice, and live classroom tools for computer science education. A recent computer science graduate of Swarthmore College, Eli also conducts research on AI-assisted programming, technical assessment, and computing education. His recent work includes research on assessing AI-assisted programming, teaching vibecoding, and live gamified CS classrooms, with projects accepted at SIGCSE Virtual 2026 and the 2026 CCSC Southeastern Conference.',
+        },
+    ],
+    2: [
+        {
+            name: 'Keith Wine',
+            title: 'Delivery Solutions Architect',
+            organization: 'Databricks',
+            organizationUrl: 'https://www.databricks.com/',
+            image: wine,
+            bio: "Keith Wine is a Delivery Solutions Architect at Databricks, where he helps large enterprises design and run data and AI platforms at scale. Before joining Databricks, he spent more than 10 years in the media industry transforming data into insights businesses can actually use and building teams to do the same. He's still not sure how his undergraduate major in Russian prepared him for any of this.",
         },
     ],
     3: [
