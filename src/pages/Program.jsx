@@ -20,6 +20,7 @@ import luu from '../assets/speakers/luu.jpg';
 import wine from '../assets/speakers/wine.jpeg';
 import hampton from '../assets/speakers/hampton.jpeg';
 import conti from '../assets/speakers/conti.webp';
+import mckenzie from '../assets/speakers/mckenzie.jpeg';
 
 
 // URI academic leadership opening CS Connect Day
@@ -202,6 +203,7 @@ const workshopPresenters = {
             title: 'Undergrad Researcher & Teaching Assistant',
             organization: 'University of Rhode Island',
             organizationUrl: 'https://web.uri.edu/cs/',
+            image: mckenzie,
             bio: 'Liam McKenzie is an undergraduate student, researcher, and teaching assistant in the Department of Computer Science and Statistics at the University of Rhode Island. His primary research focuses on applied AI/ML, particularly with cryospheric and oceanic sciences. Beyond research, he is also the student manager at the IACR AI Lab and has completed a fellowship studying the real-world limitations of AI systems.',
         },
     ],
