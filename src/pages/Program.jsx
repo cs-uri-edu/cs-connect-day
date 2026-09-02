@@ -15,6 +15,7 @@ import durand from '../assets/speakers/durand.png';
 import mazzone from '../assets/speakers/mazzone.jpg';
 
 import aguirre from '../assets/speakers/aguirre.jpeg';
+import bueno from '../assets/speakers/bueno.jpeg';
 
 import luu from '../assets/speakers/luu.jpg';
 import wine from '../assets/speakers/wine.jpeg';
@@ -121,7 +122,7 @@ const alumniPanelists = [
         title: 'Software Engineer',
         organization: 'Atlassian',
         organizationUrl: 'https://www.atlassian.com/company/careers/earlycareers',
-        role: 'Alumnus',
+        role: "'23",
         image: aguirre,
         bio: "Jason Aguirre is a software engineer at Atlassian and a 2023 graduate of the University of Rhode Island. Since graduating, he has contributed to Atlassian’s collaboration software and built his career in the technology industry. He is excited to return to URI to share his transition from college to industry and help current students navigate their own career paths.",
     },
@@ -129,15 +130,17 @@ const alumniPanelists = [
         name: 'Meghan Andrews',
         organization: 'Brightstar Lottery',
         organizationUrl: 'https://brightstarlottery.com/who-we-are/careers',
-        role: 'Alumna',
+        role: "'26",
         bio: '',
     },
     {
         name: 'Evelidis Bueno',
+        title: 'Security Engineer',
         organization: 'Google',
         organizationUrl: 'https://www.google.com/about/careers/applications/',
-        role: 'Alumna',
-        bio: '',
+        role: "'18, '20 ",
+        image: bueno,
+        bio: 'Evelidis Bueno is a Security Engineer at Google focused on cloud security. She earned both her bachelor’s degree in computer science and master’s degree in cybersecurity from the University of Rhode Island. Evelidis started her career in IT support, then moved into systems administration before finding her way into cybersecurity. A Rhode Island native and first-generation college graduate, she enjoys giving back to her community and helping students see that there isn’t just one path into a career in tech.',
     },
 ];
 
