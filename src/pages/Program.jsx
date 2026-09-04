@@ -16,10 +16,12 @@ import mazzone from '../assets/speakers/mazzone.jpg';
 
 import aguirre from '../assets/speakers/aguirre.jpeg';
 import bueno from '../assets/speakers/bueno.jpeg';
+import wallace from '../assets/speakers/wallace.png';
 
 import luu from '../assets/speakers/luu.jpg';
 import wine from '../assets/speakers/wine.jpeg';
 import hampton from '../assets/speakers/hampton.jpeg';
+import chau from '../assets/speakers/chau.jpeg';
 import conti from '../assets/speakers/conti.webp';
 import mckenzie from '../assets/speakers/mckenzie.jpeg';
 
@@ -127,13 +129,6 @@ const alumniPanelists = [
         bio: "Jason Aguirre is a software engineer at Atlassian and a 2023 graduate of the University of Rhode Island. Since graduating, he has contributed to Atlassian’s collaboration software and built his career in the technology industry. He is excited to return to URI to share his transition from college to industry and help current students navigate their own career paths.",
     },
     {
-        name: 'Meghan Andrews',
-        organization: 'Brightstar Lottery',
-        organizationUrl: 'https://brightstarlottery.com/who-we-are/careers',
-        role: "Grad '26",
-        bio: '',
-    },
-    {
         name: 'Evelidis Bueno',
         title: 'Security Engineer',
         organization: 'Google',
@@ -141,6 +136,15 @@ const alumniPanelists = [
         role: "Grad '18, '20 ",
         image: bueno,
         bio: 'Evelidis Bueno is a Security Engineer at Google focused on cloud security. She earned both her bachelor’s degree in computer science and master’s degree in cybersecurity from the University of Rhode Island. Evelidis started her career in IT support, then moved into systems administration before finding her way into cybersecurity. A Rhode Island native and first-generation college graduate, she enjoys giving back to her community and helping students see that there isn’t just one path into a career in tech.',
+    },
+    {
+        name: 'Shaun Wallace',
+        title: 'Assistant Professor of Computer Science',
+        organization: 'University of Rhode Island',
+        organizationUrl: 'https://web.uri.edu/cs/',
+        role: "Grad '08",
+        image: wallace,
+        bio: 'Shaun Wallace is an Assistant Professor of Computer Science at the University of Rhode Island. He leads the Human-Centered Experiential Technologies lab (HAX). His research starts with Human-Computer Interaction, and combines it with Systems, Data Science, Human-Centered AI, and Social Computing. He builds public research systems as products to personalize and augment human information interactions. His research has been supported by the National Science Foundation, The Readability Consortium, Adobe, Google, PLEJ, and NASA. He also has been selected as a SSIREP Public Policy Fellow and won an UserTesting Illumi Award.',
     },
 ];
 
@@ -191,6 +195,14 @@ const workshopPresenters = {
             organizationUrl: 'https://students.fidelitycareers.com/',
             bio: "Sam is a 2024 URI alumnus and a Full-Stack Developer at Fidelity. Since joining the firm through the LEAP program, he has spent nearly two years developing innovative solutions and growing his expertise across the full technology stack.",
         },
+        {
+            name: 'Ben Chau',
+            title: 'Software Engineer',
+            organization: 'Fidelity',
+            organizationUrl: 'https://students.fidelitycareers.com/',
+            image: chau,
+            bio: "Ben is a '24 Computer Science URI grad and a Software Engineer at Fidelity Investments. He has been with the company since June of last year and so far have been enjoying his time here. He is currently working in Product Recordkeeping within the Workplace Investing business unit, which is where Fidelity stores and manages the data of workplace retirement plans. Outside of work, he loves to run, go to the gym, read books, and play video games with friends.",
+        },
     ],
     4: [
         {
@@ -208,6 +220,15 @@ const workshopPresenters = {
             organizationUrl: 'https://web.uri.edu/cs/',
             image: mckenzie,
             bio: 'Liam McKenzie is an undergraduate student, researcher, and teaching assistant in the Department of Computer Science and Statistics at the University of Rhode Island. His primary research focuses on applied AI/ML, particularly with cryospheric and oceanic sciences. Beyond research, he is also the student manager at the IACR AI Lab and has completed a fellowship studying the real-world limitations of AI systems.',
+        },
+    ],
+    5: [
+        {
+            name: 'Fang Cong',
+            title: 'Senior Solutions Architect',
+            organization: 'Amazon Web Services (AWS)',
+            organizationUrl: 'https://kiro.dev/students/',
+            bio: "Fang Cong is a Senior Solutions Architect at AWS Worldwide Public Sector, supporting higher-education and public-sector customers across the Northeast. He specializes in generative AI, contact-center modernization, research computing, and secure cloud migration, helping institutions turn ambitious ideas into production-ready architectures.",
         },
     ],
 };

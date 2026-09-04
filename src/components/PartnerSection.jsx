@@ -6,6 +6,7 @@ import './PartnerSection.css';
 
 // Import logos for participating organizations
 import algoarenaLogo from '../assets/partner-logos/algoarena.png';
+import awsLogo from '../assets/partner-logos/aws.webp';
 import axialLogo from '../assets/partner-logos/axialsearch.png';
 import brownLogo from '../assets/partner-logos/brown.png';
 import codepathLogo from '../assets/partner-logos/codepath.png';
@@ -22,6 +23,11 @@ const partners = [
         name: "AlgoArena",
         logo: algoarenaLogo,
         url: "https://algoarena.net/"
+    },
+    {
+        name: "AWS",
+        logo: awsLogo,
+        url: "https://kiro.dev/students/"
     },
     {
         name: "Axial Search",
