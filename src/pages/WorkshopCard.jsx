@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-const presenterLogos = import.meta.glob(
-    '../assets/partner-logos/*',
+const presenterLogos = import.meta.glob('../assets/partner-logos/*',
     {
         eager: true,
         import: 'default',
@@ -14,44 +13,25 @@ function formatTime(dateTime) {
         return null;
     }
 
-    const timePart =
-        dateTime.includes('T')
-            ? dateTime.split('T')[1]
-            : dateTime.split(' ')[1];
+    const timePart = dateTime.includes('T') ? dateTime.split('T')[1] : dateTime.split(' ')[1];
 
     if (!timePart) {
         return null;
     }
 
-    const [
-        hourValue,
-        minuteValue,
-    ] = timePart.split(':');
+    const [hourValue, minuteValue,] = timePart.split(':');
 
-    const hour =
-        Number(hourValue);
+    const hour = Number(hourValue);
 
-    const minute =
-        Number(minuteValue);
+    const minute = Number(minuteValue);
 
-    if (
-        !Number.isInteger(hour) ||
-        !Number.isInteger(minute)
-    ) {
+    if (!Number.isInteger(hour) || !Number.isInteger(minute)) {
         return null;
     }
 
-    const formattingDate =
-        new Date(
-            2000,
-            0,
-            1,
-            hour,
-            minute
-        );
+    const formattingDate = new Date(2000, 0, 1, hour, minute);
 
-    return new Intl.DateTimeFormat(
-        'en-US',
+    return new Intl.DateTimeFormat('en-US',
         {
             hour: 'numeric',
             minute: '2-digit',
@@ -60,9 +40,7 @@ function formatTime(dateTime) {
 }
 
 
-function getOrganizationInitials(
-    organizationName
-) {
+function getOrganizationInitials(organizationName) {
     if (!organizationName) {
         return 'TBA';
     }
@@ -82,34 +60,22 @@ function getOrganizationInitials(
 
 
 function getAvailability(workshop) {
-    const registrationOpen =
-        Number(
-            workshop.registration_open
-        ) === 1;
+    const registrationOpen = Number(workshop.registration_open) === 1;
 
     if (!registrationOpen) {
         return {
             status: 'closed',
-            label:
-                'Registration closed',
+            label: 'Registration closed',
             buttonDisabled: true,
         };
     }
 
-    const seatsRemaining =
-        Number(
-            workshop.seats_remaining
-        );
+    const seatsRemaining = Number(workshop.seats_remaining);
 
-    if (
-        !Number.isFinite(
-            seatsRemaining
-        )
-    ) {
+    if (!Number.isFinite(seatsRemaining)) {
         return {
             status: 'pending',
-            label:
-                'Availability unavailable',
+            label: 'Availability unavailable',
             buttonDisabled: true,
         };
     }
@@ -117,8 +83,7 @@ function getAvailability(workshop) {
     if (seatsRemaining <= 0) {
         return {
             status: 'full',
-            label:
-                'Workshop full',
+            label: 'Workshop full',
             buttonDisabled: true,
         };
     }
@@ -126,147 +91,102 @@ function getAvailability(workshop) {
     if (seatsRemaining <= 5) {
         return {
             status: 'low',
-
-            label:
-                `Only ${seatsRemaining} ${
-                    seatsRemaining === 1
-                        ? 'seat'
-                        : 'seats'
-                } left`,
-
+            label: `Only ${seatsRemaining} ${seatsRemaining === 1 ? 'seat' : 'seats'} left`,
             buttonDisabled: false,
         };
     }
 
     return {
         status: 'available',
-
-        label:
-            `${seatsRemaining} seats available`,
-
+        label: `${seatsRemaining} seats available`,
         buttonDisabled: false,
     };
 }
 
 
-function WorkshopCard({
-    workshop,
-    isRegistered,
-    hasSessionConflict,
-    onReserve,
-    onCancel,
-}) {
-    const [isExpanded, setIsExpanded] =
-        useState(false);
+function WorkshopCard({workshop, isRegistered, hasSessionConflict, onReserve, onCancel,}) {
+    const [isExpanded, setIsExpanded] = useState(false);
 
-    const cardHeadingId =
-        `workshop-${workshop.workshop_id}-heading`;
+    const cardHeadingId = `workshop-${workshop.workshop_id}-heading`;
 
-    const detailsId =
-        `workshop-${workshop.workshop_id}-details`;
+    const detailsId = `workshop-${workshop.workshop_id}-details`;
 
-    const organization =
-        workshop.presenter_organization ||
-        'Organization to be announced';
+    const organization = workshop.presenter_organization || 'Organization to be announced';
 
-    const presenter =
-        workshop.presenter_name ||
-        'Presenter to be announced';
+    const presenter = workshop.presenter_name || 'Presenter to be announced';
 
-    const organizationInitials =
-        getOrganizationInitials(
-            workshop.presenter_organization
-        );
+    const organizationInitials = getOrganizationInitials(workshop.presenter_organization);
 
     /*
      * Keep this path consistent with however you
      * currently store your partner-logo assets.
      */
-    const presenterImage = workshop.presenter_img
-        ? presenterLogos[
-            `../assets/partner-logos/${workshop.presenter_img}`
-        ] || null
-        : null;
+    const presenterImage = workshop.presenter_img ? presenterLogos[`../assets/partner-logos/${workshop.presenter_img}`] || null : null;
 
-    const startTime =
-        formatTime(
-            workshop.start_time
-        );
+    const startTime = formatTime(workshop.start_time);
 
-    const endTime =
-        formatTime(
-            workshop.end_time
-        );
+    const endTime = formatTime(workshop.end_time);
 
-    const timeLabel =
-        startTime && endTime
-            ? `${startTime} – ${endTime}`
-            : 'Time to be announced';
+    const timeLabel = startTime && endTime ? `${startTime} – ${endTime}` : 'Time to be announced';
 
-    const locationLabel =
-        workshop.building &&
-        workshop.room_number
-            ? `${workshop.building} ${workshop.room_number}`
-            : 'Room to be announced';
+    const locationLabel = workshop.building && workshop.room_number ? `${workshop.building} ${workshop.room_number}` : 'Room to be announced';
 
-    const availability =
-        getAvailability(workshop);
+    const availability = getAvailability(workshop);
 
 
-    let buttonLabel =
-        'Reserve Seat';
+    // Convert preparation links from JSON into an array for rendering
+    const preparationLinks =
+        Array.isArray(workshop.workshop_preparation_links)
+            ? workshop.workshop_preparation_links
+            : typeof workshop.workshop_preparation_links === 'string'
+                ? (() => {
+                    try {
+                        const parsedLinks = JSON.parse(workshop.workshop_preparation_links);
 
-    let buttonDisabled =
-        availability.buttonDisabled;
+                        return Array.isArray(parsedLinks) ? parsedLinks : [];
+                    } catch {
+                        return [];
+                    }
+                })()
+                : [];
+    
+
+
+    let buttonLabel = 'Reserve Seat';
+
+    let buttonDisabled = availability.buttonDisabled;
 
 
     if (availability.status === 'full') {
-        buttonLabel =
-            'Workshop Full';
+        buttonLabel = 'Workshop Full';
     }
 
     if (availability.status === 'closed') {
-        buttonLabel =
-            'Unavailable';
+        buttonLabel = 'Unavailable';
     }
 
     if (availability.status === 'pending') {
-        buttonLabel =
-            'Unavailable';
+        buttonLabel = 'Unavailable';
     }
 
     if (hasSessionConflict) {
-        buttonLabel =
-            'Session Reserved';
+        buttonLabel = 'Session Reserved';
 
-        buttonDisabled =
-            true;
+        buttonDisabled = true;
     }
 
 
     return (
         <article
-            className={`workshop-card ${
-                isExpanded
-                    ? 'workshop-card--expanded'
-                    : ''
-            } ${
-                isRegistered
-                    ? 'workshop-card--registered'
-                    : ''
-            }`}
-            aria-labelledby={
-                cardHeadingId
-            }
+            className={`workshop-card ${isExpanded ? 'workshop-card--expanded' : ''} ${isRegistered ? 'workshop-card--registered' : ''}`}
+            aria-labelledby={cardHeadingId}
         >
             <div className="workshop-card__main">
                 <div className="workshop-card__organization">
                     {presenterImage ? (
                         <div className="workshop-card__logo">
                             <img
-                                src={
-                                    presenterImage
-                                }
+                                src={presenterImage}
                                 alt=""
                             />
                         </div>
@@ -285,22 +205,15 @@ function WorkshopCard({
 
                 <div className="workshop-card__content">
                     <h4
-                        id={
-                            cardHeadingId
-                        }
+                        id={cardHeadingId}
                     >
                         {workshop.title}
                     </h4>
 
                     <p
-                        className={`workshop-card__description ${
-                            isExpanded
-                                ? 'workshop-card__description--expanded'
-                                : ''
-                        }`}
+                        className={`workshop-card__description ${isExpanded ? 'workshop-card__description--expanded' : ''}`}
                     >
-                        {workshop.description ||
-                            'Workshop description to be announced.'}
+                        {workshop.description || 'Workshop description to be announced.'}
                     </p>
                 </div>
 
@@ -319,11 +232,7 @@ function WorkshopCard({
                             <button
                                 type="button"
                                 className="workshop-card__cancel-button"
-                                onClick={() =>
-                                    onCancel(
-                                        workshop
-                                    )
-                                }
+                                onClick={() => onCancel(workshop)}
                             >
                                 Cancel Reservation
                             </button>
@@ -341,14 +250,9 @@ function WorkshopCard({
                             <button
                                 type="button"
                                 className="workshop-card__reserve-button"
-                                onClick={() =>
-                                    onReserve(
-                                        workshop
-                                    )
+                                onClick={() => onReserve(workshop)
                                 }
-                                disabled={
-                                    buttonDisabled
-                                }
+                                disabled={buttonDisabled}
                             >
                                 {
                                     buttonLabel
@@ -359,14 +263,39 @@ function WorkshopCard({
                 </div>
             </div>
 
-
+            {isExpanded && (
             <div
                 id={detailsId}
                 className="workshop-card__expanded-details"
-                aria-hidden={
-                    !isExpanded
-                }
             >
+
+                {workshop.workshop_preparation && (
+                    <div className="workshop-card__preparation">
+                        <p className="workshop-card__preparation-label">
+                            Before the Workshop
+                        </p>
+
+                        <p className="workshop-card__preparation-text">
+                            {workshop.workshop_preparation}
+                        </p>
+
+                        {preparationLinks.length > 0 && (
+                            <div className="workshop-card__preparation-links">
+                                {preparationLinks.map((link) => (
+                                    <a
+                                        key={link.url}
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {link.label}
+                                    </a>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                )}
+
                 <dl>
                     <div>
                         <dt>
@@ -394,10 +323,8 @@ function WorkshopCard({
                         </dt>
 
                         <dd>
-                            {workshop.capacity !==
-                                null &&
-                            workshop.capacity !==
-                                undefined
+                            {workshop.capacity !== null &&
+                            workshop.capacity !== undefined
                                 ? `${workshop.capacity} students`
                                 : 'To be announced'}
                         </dd>
@@ -409,16 +336,15 @@ function WorkshopCard({
                         </dt>
 
                         <dd>
-                            {workshop.seats_remaining !==
-                                null &&
-                            workshop.seats_remaining !==
-                                undefined
+                            {workshop.seats_remaining !== null &&
+                            workshop.seats_remaining !== undefined
                                 ? workshop.seats_remaining
                                 : 'Unavailable'}
                         </dd>
                     </div>
                 </dl>
             </div>
+            )}
 
 
             <div className="workshop-card__footer">
@@ -473,23 +399,12 @@ function WorkshopCard({
                     type="button"
                     className="workshop-card__details-button"
                     onClick={() =>
-                        setIsExpanded(
-                            (
-                                currentValue
-                            ) =>
-                                !currentValue
-                        )
+                        setIsExpanded((currentValue) => !currentValue)
                     }
-                    aria-expanded={
-                        isExpanded
-                    }
-                    aria-controls={
-                        detailsId
-                    }
+                    aria-expanded={isExpanded}
+                    aria-controls={detailsId}
                 >
-                    {isExpanded
-                        ? 'Show Less'
-                        : 'Learn More'}
+                    {isExpanded ? 'Show Less' : 'Learn More'}
 
                     <span
                         className={
