@@ -87,8 +87,7 @@ function ReservationModal({
                     !isCancelMode && (
                         <>
                             <p className="reservation-modal__intro">
-                                Sign in with your URI Google account to
-                                continue with your workshop reservation.
+                                URI students must sign in with their @uri.edu Google account to continue with workshop registration.
                             </p>
 
                             {message && (
@@ -106,6 +105,14 @@ function ReservationModal({
                                     onAuthenticationError
                                 }
                             />
+
+                            <p className="reservation-modal__ccri">
+                                <strong>CCRI student?</strong> Email{' '}
+                                <a href={`mailto:sarmenti@uri.edu?subject=${encodeURIComponent(workshop.title)}`}>
+                                    sarmenti@uri.edu
+                                </a>{' '}
+                                to request a seat in this workshop.
+                            </p>
 
                             <p className="reservation-modal__privacy">
                                 Your Google password is never sent to or

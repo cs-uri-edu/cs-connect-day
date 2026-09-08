@@ -849,6 +849,26 @@
     line-height: 1.7;
 }
 
+.reservation-modal__ccri {
+    margin: 1.25rem 0 0;
+
+    color: var(--gray-900);
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.reservation-modal__ccri a {
+    color: var(--uri-accessible-blue);
+    font-weight: 800;
+    text-underline-offset: 0.2rem;
+}
+
+.reservation-modal__ccri a:hover,
+.reservation-modal__ccri a:focus-visible {
+    color: var(--uri-navy);
+}
+
 .reservation-modal__privacy {
     margin: 1.25rem 0 0;
 
