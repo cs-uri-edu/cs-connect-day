@@ -882,8 +882,8 @@ function Agenda() {
 
                         {/* First afternoon workshop session */}
                         {sessionOneWorkshops.length > 0 && (
-                            <section className="program-workshop-session" aria-labelledby="workshop-session-two-heading">
-                                <h3 id="workshop-session-two-heading">
+                            <section className="program-workshop-session" aria-labelledby="workshop-session-one-heading">
+                                <h3 id="workshop-session-one-heading">
                                     Session 1
                                     <span>2:00 PM – 3:30 PM</span>
                                 </h3>

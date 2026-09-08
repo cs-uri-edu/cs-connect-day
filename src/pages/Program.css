@@ -420,8 +420,8 @@
 
 .program-workshop-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .program-workshop-card {
@@ -650,10 +650,6 @@
 
     .speaker-grid--featured,
     .speaker-grid--moderator {
-        grid-template-columns: 1fr;
-    }
-
-    .program-workshop-grid {
         grid-template-columns: 1fr;
     }
 }
