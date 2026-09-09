@@ -507,6 +507,7 @@
 .workshop-card__preparation-text {
     margin: 0;
     line-height: 1.6;
+    white-space: pre-line;
 }
 
 .workshop-card__preparation-links {
