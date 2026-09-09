@@ -17,6 +17,7 @@ import mazzone from '../assets/speakers/mazzone.jpg';
 import aguirre from '../assets/speakers/aguirre.jpeg';
 import bueno from '../assets/speakers/bueno.jpeg';
 import wallace from '../assets/speakers/wallace.png';
+import aceto from '../assets/speakers/aceto.jpg';
 
 import luu from '../assets/speakers/luu.jpg';
 import wine from '../assets/speakers/wine.jpeg';
@@ -145,6 +146,15 @@ const alumniPanelists = [
         role: "Grad '08",
         image: wallace,
         bio: 'Shaun Wallace is an Assistant Professor of Computer Science at the University of Rhode Island. He leads the Human-Centered Experiential Technologies lab (HAX). His research starts with Human-Computer Interaction, and combines it with Systems, Data Science, Human-Centered AI, and Social Computing. He builds public research systems as products to personalize and augment human information interactions. His research has been supported by the National Science Foundation, The Readability Consortium, Adobe, Google, PLEJ, and NASA. He also has been selected as a SSIREP Public Policy Fellow and won an UserTesting Illumi Award.',
+    },
+    {
+        name: 'Eben Aceto',
+        title: 'Research Engineer',
+        organization: 'Vision Systems, Inc.',
+        organizationUrl: 'https://www.visionsystemsinc.com/',
+        role: "Grad '20",
+        image: aceto,
+        bio: "Eben Aceto is a Research Engineer at Vision Systems Inc., a computer vision technology and research company based in Rhode Island. While pursuing a bachelor's degree in computer science, he worked as a teaching assistant for the URI Computer Science Dept., helping students succeed and better understand course material. Since leaving URI, he has gone on to support the development of cutting-edge 3D geospatial intelligence and reconstruction technologies. He is thrilled to return and discuss his journey and lessons learned since entering the workforce.",
     },
 ];
 
