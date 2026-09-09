@@ -272,7 +272,7 @@ function WorkshopCard({workshop, isRegistered, hasSessionConflict, onReserve, on
                 {workshop.workshop_preparation && (
                     <div className="workshop-card__preparation">
                         <p className="workshop-card__preparation-label">
-                            Before the Workshop
+                            Before Workshop
                         </p>
 
                         <p className="workshop-card__preparation-text">
