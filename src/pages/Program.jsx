@@ -159,6 +159,17 @@ const alumniPanelists = [
 ];
 
 
+// Alumni Panel moderator
+const alumniModerator = {
+    name: 'Sergio Salguero',
+    title: "Grad '28",
+    organization: 'University of Rhode Island',
+    organizationUrl: 'https://web.uri.edu/cs/',
+    role: 'Moderator',
+    bio: 'Sergio is a junior at the University of Rhode Island pursuing a dual degree in B.S. Computer Science and B.S. Electrical Engineering, and a Talent Development scholar from Pawtucket. He recently built GameSlate, a full-stack officiating assignment platform serving towns in Kingston, Smithfield, and Coventry, using React, TypeScript, Node, and PostgreSQL.',
+};
+
+
 
 const workshopPresenters = {
     1: [
@@ -826,6 +837,16 @@ function Agenda() {
                             key={alumnus.name}
                         />
                     ))}
+                </div>
+
+                <div className="program-moderator">
+                    <div className="program-moderator__header">
+                        <p className="section-eyebrow">Moderator</p>
+                    </div>
+
+                    <div className="speaker-grid speaker-grid--moderator">
+                        <SpeakerCard person={alumniModerator} />
+                    </div>
                 </div>
             </section>
 
