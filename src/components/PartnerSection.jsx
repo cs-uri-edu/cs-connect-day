@@ -40,11 +40,6 @@ const partners = [
         url: "https://cs.brown.edu/"
     },
     {
-        name: "Codepath",
-        logo: codepathLogo,
-        url: "https://www.codepath.org/"
-    },
-    {
         name: "Databricks",
         logo: databricksLogo,
         url: "https://www.databricks.com/"
