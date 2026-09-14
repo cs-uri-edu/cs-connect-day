@@ -94,6 +94,13 @@ const industryPanelists = [
         image: durand,
         bio: 'Liz Durand is the Global Talent Acquisition Analytics Lead at Schneider Electric, where Liz leads global talent analytics and workforce insights initiatives that help drive data-informed hiring and talent strategies. With experience spanning talent acquisition, analytics, process transformation, and technology, Liz is passionate about using data and AI to improve how organizations attract, engage, and develop talent. Liz enjoys connecting students and early-career professionals with opportunities to explore careers in technology and the future of work.',
     },
+    {
+        name: 'Aditya Durand',
+        organization: 'Amazon Web Services (AWS)',
+        organizationUrl: 'https://kiro.dev/students/',
+        role: 'Panelist',
+        bio: 'Bio coming soon...',
+    },
 ];
 
 
