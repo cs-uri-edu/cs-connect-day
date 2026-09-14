@@ -86,15 +86,6 @@ const industryPanelists = [
         bio: 'Sam Chappell is the founder and CEO of  Axial Search, an executive search and recruitment firm specializing in AI, machine learning and data. He recruits everyone from AI/ML engineers to the executives who own the strategy. His clients range from early-stage startups to established enterprise-scale businesses, so he sees how these teams are built at every stage of growth.',
     },
     {
-        name: 'Cam Flowers',
-        title: 'Sr. Manager of AI Delivery & Partner Deployments',
-        organization: 'CodePath',
-        organizationUrl: 'https://www.codepath.org/',
-        role: 'Panelist',
-        image: flowers,
-        bio: 'Cam Flowers is a senior software engineer, technology entrepreneur, and adjunct lecturer of computer science originally from Chicago, Illinois, and currently based in Atlanta, Georgia. At CodePath, he serves as the Senior Manager of AI Delivery and Partner Deployments, where he co-leads the Applied AI Engineering Pathway. This three-course program guides university students from AI fundamentals into applied AI fellowships across the country. This includes most notably the Claude Corps, a national, paid initiative launched in partnership with Anthropic that places early-career professionals at U.S. nonprofits to apply artificial intelligence to real-world problems.',
-    },
-    {
         name: 'Liz Durand',
         title: 'Global Talent Acquisition Analytics Lead',
         organization: 'Schneider Electric',
