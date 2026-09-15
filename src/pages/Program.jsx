@@ -18,6 +18,7 @@ import aguirre from '../assets/speakers/aguirre.jpeg';
 import bueno from '../assets/speakers/bueno.jpeg';
 import wallace from '../assets/speakers/wallace.png';
 import aceto from '../assets/speakers/aceto.jpg';
+import salguero from '../assets/speakers/salguero.jpg';
 
 import luu from '../assets/speakers/luu.jpg';
 import wine from '../assets/speakers/wine.jpeg';
@@ -164,6 +165,7 @@ const alumniModerator = {
     organization: 'University of Rhode Island',
     organizationUrl: 'https://web.uri.edu/cs/',
     role: 'Moderator',
+    image: salguero,
     bio: 'Sergio is a junior at the University of Rhode Island pursuing a dual degree in B.S. Computer Science and B.S. Electrical Engineering, and a Talent Development scholar from Pawtucket. He recently built GameSlate, a full-stack officiating assignment platform serving towns in Kingston, Smithfield, and Coventry, using React, TypeScript, Node, and PostgreSQL.',
 };
 
