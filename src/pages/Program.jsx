@@ -26,6 +26,7 @@ import hampton from '../assets/speakers/hampton.jpeg';
 import chau from '../assets/speakers/chau.jpeg';
 import conti from '../assets/speakers/conti.webp';
 import mckenzie from '../assets/speakers/mckenzie.jpeg';
+import wolfe from '../assets/speakers/wolfe.webp';
 
 
 // URI academic leadership opening CS Connect Day
@@ -251,6 +252,16 @@ const workshopPresenters = {
             organization: 'Amazon Web Services (AWS)',
             organizationUrl: 'https://kiro.dev/students/',
             bio: "Fang Cong is a Senior Solutions Architect at AWS Worldwide Public Sector, supporting higher-education and public-sector customers across the Northeast. He specializes in generative AI, contact-center modernization, research computing, and secure cloud migration, helping institutions turn ambitious ideas into production-ready architectures.",
+        },
+    ],
+    6: [
+        {
+            name: 'Vic Fay-Wolfe',
+            title: 'Professor',
+            organization: 'University of Rhode Island',
+            organizationUrl: 'https://web.uri.edu/cs/',
+            image: wolfe,
+            bio: "Victor Fay-Wolfe researches real-time systems, distributed systems, real-time data distribution, real-time sensor networks, real-time middleware, quality of service, real-time databases, semantic concurrency control, and object-oriented programming.",
         },
     ],
 };
