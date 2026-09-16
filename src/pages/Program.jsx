@@ -97,10 +97,11 @@ const industryPanelists = [
     },
     {
         name: 'Aditya Durand',
+        title: 'AI/ML Specialist Solutions Architect',
         organization: 'Amazon Web Services (AWS)',
         organizationUrl: 'https://kiro.dev/students/',
         role: 'Panelist',
-        bio: 'Bio coming soon...',
+        bio: 'Aditya Singh leads artificial intelligence and machine learning solutions for higher education and state and local government organizations at AWS. He began his career as a Software Engineer at American Express, and since joining AWS he has architected and deployed production agentic AI systems across education and government. As an AI/ML Specialist Solutions Architect he advises institutions on AI adoption from proof of concept through production deployment, with a focus on responsible AI practices and scalable solutions. He has served as an instructor at George Mason University, where he earned his MS in Computer Science with a machine learning specialization, and is a technical reviewer for the SciPy Conference. Outside of work he is usually at a hackathon or on a road trip.',
     },
 ];
 
