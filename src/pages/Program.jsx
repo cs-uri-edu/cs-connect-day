@@ -12,6 +12,7 @@ import young from '../assets/speakers/young.jpg';
 import chappell from '../assets/speakers/chappell.webp';
 import flowers from '../assets/speakers/flowers.jpeg';
 import durand from '../assets/speakers/durand.png';
+import singh from '../assets/speakers/singh.jpeg';
 import mazzone from '../assets/speakers/mazzone.jpg';
 
 import aguirre from '../assets/speakers/aguirre.jpeg';
@@ -97,11 +98,12 @@ const industryPanelists = [
         bio: 'Liz Durand is the Global Talent Acquisition Analytics Lead at Schneider Electric, where Liz leads global talent analytics and workforce insights initiatives that help drive data-informed hiring and talent strategies. With experience spanning talent acquisition, analytics, process transformation, and technology, Liz is passionate about using data and AI to improve how organizations attract, engage, and develop talent. Liz enjoys connecting students and early-career professionals with opportunities to explore careers in technology and the future of work.',
     },
     {
-        name: 'Aditya Durand',
+        name: 'Aditya Singh',
         title: 'AI/ML Specialist Solutions Architect',
         organization: 'Amazon Web Services (AWS)',
         organizationUrl: 'https://kiro.dev/students/',
         role: 'Panelist',
+        image: singh,
         bio: 'Aditya Singh leads artificial intelligence and machine learning solutions for higher education and state and local government organizations at AWS. He began his career as a Software Engineer at American Express, and since joining AWS he has architected and deployed production agentic AI systems across education and government. As an AI/ML Specialist Solutions Architect he advises institutions on AI adoption from proof of concept through production deployment, with a focus on responsible AI practices and scalable solutions. He has served as an instructor at George Mason University, where he earned his MS in Computer Science with a machine learning specialization, and is a technical reviewer for the SciPy Conference. Outside of work he is usually at a hackathon or on a road trip.',
     },
 ];
