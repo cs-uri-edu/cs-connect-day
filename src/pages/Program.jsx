@@ -28,6 +28,7 @@ import chau from '../assets/speakers/chau.jpeg';
 import conti from '../assets/speakers/conti.webp';
 import mckenzie from '../assets/speakers/mckenzie.jpeg';
 import wolfe from '../assets/speakers/wolfe.webp';
+import cong from '../assets/speakers/cong.jpg';
 
 
 // URI academic leadership opening CS Connect Day
@@ -253,6 +254,7 @@ const workshopPresenters = {
             title: 'Senior Solutions Architect',
             organization: 'Amazon Web Services (AWS)',
             organizationUrl: 'https://kiro.dev/students/',
+            image: cong,
             bio: "Fang Cong is a Senior Solutions Architect at AWS Worldwide Public Sector, supporting higher-education and public-sector customers across the Northeast. He specializes in generative AI, contact-center modernization, research computing, and secure cloud migration, helping institutions turn ambitious ideas into production-ready architectures.",
         },
     ],
